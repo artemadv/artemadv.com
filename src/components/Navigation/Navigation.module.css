@@ -1,0 +1,31 @@
+.navigation {
+    font-size: var(--font-size-700);
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    &__item {
+        margin-left: var(--indent-400);
+    }
+
+    &__item_position_first {
+        margin-left: 0;
+    }
+
+    &__link {
+        color: var(--color-dark-900);
+        text-decoration: none;
+    }
+
+    &__link:hover {
+        color: var(--color-blue-800);
+    }
+
+    &__link_theme_active {
+        color: var(--color-blue-700);
+    }
+}

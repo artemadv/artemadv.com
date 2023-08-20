@@ -1,0 +1,51 @@
+@import '../../styles/mixins.css';
+
+.col {
+    padding-left: var(--indent-100);
+    padding-right: var(--indent-100);
+    flex: 0 0 auto;
+    box-sizing: border-box;
+
+    /*
+    * TODO: Need refactoring.
+    * Temporary solution. Style order is important.
+    */
+
+    @for $i from 1 to 12 {
+        &_size_default$(i) {
+            width: calc((100% * $(i)) / 12);
+        }
+    }
+
+    @for $i from 1 to 12 {
+        &_size_mobile$(i) {
+            @mixin mediaMobile {
+                width: calc((100% * $(i)) / 12);
+            }
+        }
+    }
+
+    @for $i from 1 to 12 {
+        &_size_tablet$(i) {
+            @mixin mediaTablet {
+                width: calc((100% * $(i)) / 12);
+            }
+        }
+    }
+
+    @for $i from 1 to 12 {
+        &_size_desktop$(i) {
+            @mixin mediaDesktop {
+                width: calc((100% * $(i)) / 12);
+            }
+        }
+    }
+
+    @for $i from 1 to 12 {
+        &_size_desktopLarge$(i) {
+            @mixin mediaDesktopLarge {
+                width: calc((100% * $(i)) / 12);
+            }
+        }
+    }
+}

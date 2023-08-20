@@ -1,0 +1,17 @@
+.logotype {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: var(--font-size-700);
+    color: var(--color-white-50);
+    background-color: var(--color-blue-800);
+    padding: var(--indent-100) var(--indent-200);
+    display: inline-flex;
+
+    &:hover {
+        background-color: var(--color-blue-700);
+    }
+
+    &__selectedText {
+        color: var(--color-yellow-100);
+    }
+}

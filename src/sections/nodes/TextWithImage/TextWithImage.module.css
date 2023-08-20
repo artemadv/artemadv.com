@@ -1,0 +1,20 @@
+.section {
+    &__imageWrapper {
+        position: relative;
+    }
+
+    &__subtitle {
+        margin-top: var(--indent-300);
+    }
+
+    &__buttons {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: var(--indent-400) 0 0;
+    }
+
+    &__buttonWrapper:not(:first-child) {
+        margin-left: var(--indent-300);
+    }
+}
