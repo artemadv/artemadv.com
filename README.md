@@ -1,2 +1,1 @@
-# artemadv.com
-Personal website
+# [WIP] artemadv.com

@@ -1,0 +1,7 @@
+.logotype {
+    text-transform: uppercase;
+
+    &__selectedText {
+        color: var(--color-yellow-100);
+    }
+}

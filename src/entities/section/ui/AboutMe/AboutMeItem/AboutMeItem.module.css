@@ -1,0 +1,15 @@
+.section {
+    display: flex;
+    align-items: center;
+    padding-top: var(--indent-400);
+
+    &__title {
+        padding: 0 var(--indent-400);
+        margin: 0 var(--indent-300) 0 0;
+        border-radius: var(--border-radius-100);
+    }
+
+    &__subtitle {
+        margin: 0;
+    }
+}

@@ -1,0 +1,14 @@
+.adaptiveImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* ! I don't use important, but it's necessary here */
+    &__element {
+        position: relative !important;
+        height: auto !important;
+        max-width: var(--width-400);
+    }
+}

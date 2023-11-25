@@ -1,0 +1,1 @@
+export { TextWithImageItem } from './TextWithImageItem';

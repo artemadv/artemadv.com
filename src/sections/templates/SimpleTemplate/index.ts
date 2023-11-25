@@ -1,1 +1,0 @@
-export { SimpleTemplate } from './SimpleTemplate';

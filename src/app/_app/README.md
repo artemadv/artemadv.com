@@ -1,0 +1,1 @@
+I use the `_app` folder for FSD slices because the `app` folder is used for routes.

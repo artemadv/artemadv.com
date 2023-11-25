@@ -1,0 +1,21 @@
+@import url('../../../../shared/ui/styles/mixins/media.css');
+
+.header {
+    padding-top: var(--indent-400);
+    padding-bottom: var(--indent-400);
+
+    &__navigation {
+        margin-top: var(--indent-300);
+        overflow-x: auto;
+
+        @mixin mediaMobile {
+            margin-top: 0;
+        }
+    }
+
+    &__navigationList {
+        @mixin mediaMobile {
+            justify-content: flex-end;
+        }
+    }
+}
