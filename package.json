@@ -13,7 +13,8 @@
         "lint": "next lint",
         "prepare": "husky install",
         "lint:css": "stylelint \"src/**/*.module.css\"",
-        "lint:css:fix": "stylelint \"src/**/*.module.css\" --fix"
+        "lint:css:fix": "stylelint \"src/**/*.module.css\" --fix",
+        "check-types": "tsc --noEmit"
     },
     "dependencies": {
         "@types/node": "20.2.5",

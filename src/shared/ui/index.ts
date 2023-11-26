@@ -8,3 +8,5 @@ export { AdaptiveImage } from './ui/custom-next/AdaptiveImage';
 export { Row } from './ui/grid/Row';
 export { Col } from './ui/grid/Col';
 export { Container } from './ui/grid/Container';
+// Types
+export { checkTypographyTag } from './libs/type-guards';

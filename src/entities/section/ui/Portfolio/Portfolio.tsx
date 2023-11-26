@@ -9,8 +9,6 @@ import { PortfolioItem } from './PortfolioItem';
 
 import { Container } from '@/shared/ui';
 
-import styles from './Portfolio.module.css';
-
 import 'swiper/css';
 
 export const Portfolio: FC<Section> = (props) => {

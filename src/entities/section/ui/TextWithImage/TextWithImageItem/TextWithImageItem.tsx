@@ -4,7 +4,15 @@ import clsx from 'clsx';
 
 import { Node } from '@/entities/section/model/types';
 import { getColorToneByTextColor } from '@/shared/libs';
-import { AdaptiveImage, Button, Col, Container, Row, Typography } from '@/shared/ui';
+import {
+    AdaptiveImage,
+    Button,
+    Col,
+    Container,
+    Row,
+    Typography,
+    checkTypographyTag,
+} from '@/shared/ui';
 
 import styles from './TextWithImageItem.module.css';
 
@@ -39,7 +47,7 @@ export const TextWithImageItem: FC<Node> = (props) => {
                         )}
                         {titleText && (
                             <Typography
-                                as={titleAs || 'h1'}
+                                as={checkTypographyTag(titleAs) ? titleAs : 'h1'}
                                 weight="medium"
                                 className={styles.section__title}
                             >

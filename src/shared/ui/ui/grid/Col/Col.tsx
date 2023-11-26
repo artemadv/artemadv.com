@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useMemo } from 'react';
 import clsx from 'clsx';
 
-import { Range } from '../../../types';
+import { Range } from '../../../types/grid';
 
 import styles from './Col.module.css';
 
