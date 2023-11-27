@@ -6,7 +6,7 @@ const pattern =
     `((_(${camelCase}|${kebabCase})){1,2})?$`; // modifier
 
 module.exports = {
-    extends: 'stylelint-config-standard',
+    extends: ['stylelint-config-standard'],
     rules: {
         'selector-class-pattern': [
             pattern,
@@ -16,5 +16,6 @@ module.exports = {
             },
         ],
         'media-feature-range-notation': 'prefix',
+        'at-rule-no-unknown': null,
     },
 };

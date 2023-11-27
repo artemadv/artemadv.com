@@ -14,7 +14,9 @@
         "prepare": "husky install",
         "lint:css": "stylelint \"src/**/*.module.css\"",
         "lint:css:fix": "stylelint \"src/**/*.module.css\" --fix",
-        "check-types": "tsc --noEmit"
+        "check-types": "tsc --noEmit",
+        "check-exports": "ts-prune --ignore 'src/app'",
+        "lint:all": "concurrently \"npm run lint\" \"npm run check-types\" \"npm run check-exports\" \"npm run lint:css\""
     },
     "dependencies": {
         "@types/node": "20.2.5",
@@ -32,6 +34,7 @@
         "@typescript-eslint/eslint-plugin": "^5.59.9",
         "@typescript-eslint/parser": "^5.59.9",
         "autoprefixer": "^10.4.14",
+        "concurrently": "^8.2.2",
         "eslint": "^8.42.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-prettier": "^8.8.0",
@@ -43,7 +46,6 @@
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "husky": "^8.0.3",
-        "lint-staged": "^13.2.2",
         "postcss-calc": "^9.0.1",
         "postcss-custom-properties": "^13.2.0",
         "postcss-flexbugs-fixes": "^5.0.2",
@@ -55,6 +57,7 @@
         "stylelint": "^15.10.1",
         "stylelint-config-standard": "^34.0.0",
         "tailwindcss": "^3.3.2",
+        "ts-prune": "^0.10.3",
         "typescript": "^5.1.3"
     }
 }
