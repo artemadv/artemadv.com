@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 
 import { Section } from '../../model/types';
 
-import { AboutMeItem } from './AboutMeItem';
+import { CounterItem } from './CounterItem';
 
 import { Container, Row, Col } from '@/shared/ui';
 
-import styles from './AboutMe.module.css';
+import styles from './Counter.module.css';
 
-export const AboutMe: FC<Section> = (props) => {
+export const Counter: FC<Section> = (props) => {
     const { style, nodes } = props;
 
     return (
@@ -20,7 +20,7 @@ export const AboutMe: FC<Section> = (props) => {
                     </Col>
                     {nodes?.map((node) => (
                         <Col key={node.id} size={{ mobile: 6, desktop: 4, desktopLarge: 3 }}>
-                            <AboutMeItem {...node} />
+                            <CounterItem {...node} />
                         </Col>
                     ))}
                 </Row>

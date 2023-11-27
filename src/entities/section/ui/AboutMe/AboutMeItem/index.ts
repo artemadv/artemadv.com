@@ -1,1 +1,0 @@
-export { AboutMeItem } from './AboutMeItem';

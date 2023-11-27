@@ -1,3 +1,5 @@
-export { Section } from './ui/Section';
+export { Carousel } from './ui/Carousel';
+export { Counter } from './ui/Counter';
+export { TextWithImage } from './ui/TextWithImage';
 
-export { SectionNames } from './model/types';
+export { SectionNames, type Section, type SectionExtended } from './model/types';

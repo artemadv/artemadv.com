@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import parse from 'html-react-parser';
 
-import { Node } from '@/entities/section/model/types';
 import { Typography } from '@/shared/ui';
+import { Node } from '@/shared/types';
 
-import styles from './AboutMeItem.module.css';
+import styles from './CounterItem.module.css';
 
-export const AboutMeItem: FC<Node> = (props) => {
+export const CounterItem: FC<Node> = (props) => {
     const {
         title: { text: titleText } = {},
         subtitle,

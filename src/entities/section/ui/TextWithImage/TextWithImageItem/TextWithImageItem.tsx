@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import parse from 'html-react-parser';
 import clsx from 'clsx';
 
-import { Node } from '@/entities/section/model/types';
 import { getColorToneByTextColor } from '@/shared/libs';
 import {
     AdaptiveImage,
@@ -13,6 +12,7 @@ import {
     Typography,
     checkTypographyTag,
 } from '@/shared/ui';
+import { Node } from '@/shared/types';
 
 import styles from './TextWithImageItem.module.css';
 

@@ -78,7 +78,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section3',
-                sectionName: SectionNames.AboutMe,
+                sectionName: SectionNames.Counter,
                 style: {
                     background: 'var(--color-blue-700)',
                     padding: '0px 0 150px',
@@ -176,7 +176,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
             },
             {
                 id: 'section5',
-                sectionName: SectionNames.Portfolio,
+                sectionName: SectionNames.CarouselPortfolio,
                 style: {
                     background: 'var(--color-yellow-50)',
                     padding: '75px 0 150px',

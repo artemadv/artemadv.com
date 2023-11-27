@@ -1,18 +1,17 @@
 'use client';
 
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Section } from '../../model/types';
-
-import { PortfolioItem } from './PortfolioItem';
+import { SectionExtended } from '../../model/types';
 
 import { Container } from '@/shared/ui';
 
 import 'swiper/css';
 
-export const Portfolio: FC<Section> = (props) => {
-    const { style, nodes } = props;
+export const Carousel: FC<SectionExtended> = (props) => {
+    const { style, nodes, mainSlot } = props;
+    const CarouselItem = mainSlot ?? Fragment;
 
     return (
         <div style={style}>
@@ -34,7 +33,7 @@ export const Portfolio: FC<Section> = (props) => {
                 >
                     {nodes?.map((node) => (
                         <SwiperSlide key={node.id}>
-                            <PortfolioItem {...node} />
+                            <CarouselItem {...node} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
