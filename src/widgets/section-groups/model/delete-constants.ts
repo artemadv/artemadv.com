@@ -99,10 +99,10 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                     {
                         id: 'node4',
                         title: {
-                            text: '4',
+                            text: '2',
                             as: 'p',
                         },
-                        subtitle: 'Years<br />of experience',
+                        subtitle: 'Major projects<br />and many others',
                         style: {
                             color: '#fff',
                             background: 'var(--color-blue-800)',
@@ -111,10 +111,10 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                     {
                         id: 'node5',
                         title: {
-                            text: '4',
+                            text: '31',
                             as: 'p',
                         },
-                        subtitle: 'Years<br />of experience',
+                        subtitle: 'Years old',
                         style: {
                             color: '#fff',
                             background: 'var(--color-blue-800)',
@@ -123,22 +123,10 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                     {
                         id: 'node6',
                         title: {
-                            text: '4',
+                            text: 'A2',
                             as: 'p',
                         },
-                        subtitle: 'Years<br />of experience',
-                        style: {
-                            color: '#fff',
-                            background: 'var(--color-blue-800)',
-                        },
-                    },
-                    {
-                        id: 'node7',
-                        title: {
-                            text: '4',
-                            as: 'p',
-                        },
-                        subtitle: 'Years<br />of experience',
+                        subtitle: 'Level<br />of English',
                         style: {
                             color: '#fff',
                             background: 'var(--color-blue-800)',
@@ -156,7 +144,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.TextWithImage,
                 style: {
                     background: 'var(--color-yellow-50)',
-                    padding: '150px 0 75px',
+                    padding: '150px 0 50px',
                 },
                 nodes: [
                     {
@@ -179,73 +167,57 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.CarouselPortfolio,
                 style: {
                     background: 'var(--color-yellow-50)',
-                    padding: '75px 0 150px',
+                    padding: '50px 0 150px',
                 },
                 nodes: [
                     {
                         id: 'node9',
                         title: {
-                            text: 'Title 1',
+                            text: 'The largest subscription service in Russia',
                             as: 'h5',
                         },
-                        subtitle: 'Description 1',
+                        subtitle:
+                            'Worked in the partner integration team. We launched such products as subscriptions for children, for travelers and those who like to read and watch movies',
                         style: {
                             color: '#000',
+                            background: 'var(--color-yellow-100)',
                         },
                     },
                     {
                         id: 'node10',
                         title: {
-                            text: 'Title 2',
+                            text: 'Regional electronics retailer',
                             as: 'h5',
                         },
-                        subtitle: 'Description 2',
+                        subtitle:
+                            'Worked in the marketing team. Developed landing pages for promotions, letters and website interfaces.',
                         style: {
                             color: '#000',
+                            background: 'var(--color-yellow-100)',
                         },
                     },
                     {
                         id: 'node11',
                         title: {
-                            text: 'Title 3',
+                            text: 'Personal website',
                             as: 'h5',
                         },
-                        subtitle: 'Description 3',
+                        subtitle: 'artemadv.com',
                         style: {
                             color: '#000',
+                            background: 'var(--color-yellow-100)',
                         },
                     },
                     {
                         id: 'node12',
                         title: {
-                            text: 'Title 4',
+                            text: 'Money control',
                             as: 'h5',
                         },
-                        subtitle: 'Description 4',
+                        subtitle: 'Coming soon',
                         style: {
                             color: '#000',
-                        },
-                    },
-                    {
-                        id: 'node13',
-                        title: {
-                            text: 'Title 5',
-                            as: 'h5',
-                        },
-                        subtitle: 'Description 5',
-                        style: {
-                            color: '#000',
-                        },
-                    },
-                    {
-                        id: 'node14',
-                        title: {
-                            text: 'Title 6',
-                            as: 'h5',
-                        },
-                        subtitle: 'Description 6',
-                        style: {
-                            color: '#000',
+                            background: 'var(--color-yellow-100)',
                         },
                     },
                 ],

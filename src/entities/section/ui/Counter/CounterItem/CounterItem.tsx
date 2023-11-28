@@ -1,32 +1,28 @@
 import React, { FC } from 'react';
 import parse from 'html-react-parser';
+import clsx from 'clsx';
 
 import { Typography } from '@/shared/ui';
 import { Node } from '@/shared/types';
 
 import styles from './CounterItem.module.css';
 
-export const CounterItem: FC<Node> = (props) => {
-    const {
-        title: { text: titleText } = {},
-        subtitle,
-        style: { background, ...otherStyle } = {},
-    } = props;
+type CounterItem = Node & {
+    className?: string;
+};
+
+export const CounterItem: FC<CounterItem> = (props) => {
+    const { title: { text: titleText } = {}, subtitle, style, className } = props;
 
     return (
-        <div style={otherStyle} className={styles.section}>
+        <div style={style} className={clsx(styles.section, className)}>
             {titleText && (
-                <Typography
-                    size="h1"
-                    weight="bold"
-                    className={styles.section__title}
-                    style={{ background }}
-                >
+                <Typography size="h1" weight="bold" className={styles.section__rectangle}>
                     {parse(titleText)}
                 </Typography>
             )}
             {subtitle && (
-                <Typography className={styles.section__subtitle}>{parse(subtitle)}</Typography>
+                <Typography className={styles.section__text}>{parse(subtitle)}</Typography>
             )}
         </div>
     );

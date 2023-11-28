@@ -1,8 +1,13 @@
 @import url('../../../../shared/ui/styles/mixins/media.css');
+@import url('../../../../shared/styles/mixins/styles.css');
 
 .header {
     padding-top: var(--indent-400);
     padding-bottom: var(--indent-400);
+    position: relative;
+    z-index: 1;
+
+    @mixin darkBoxShadow;
 
     &__navigation {
         margin-top: var(--indent-300);

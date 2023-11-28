@@ -18,5 +18,5 @@ export type Section = {
 };
 
 export type SectionExtended = Section & {
-    mainSlot?: FC<Node>;
+    mainSlot?: FC<Node & { className?: string }>;
 };

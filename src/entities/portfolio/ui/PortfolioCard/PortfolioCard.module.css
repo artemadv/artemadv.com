@@ -1,0 +1,58 @@
+@import url('../../../../shared/styles/mixins/styles.css');
+
+.portfolioCard {
+    padding-bottom: var(--indent-50);
+    box-sizing: border-box;
+
+    &__inner {
+        border-radius: var(--border-radius-200);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__imageWrapper {
+        position: relative;
+    }
+
+    &__fakeImage {
+        padding: var(--indent-400);
+        box-sizing: border-box;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        border-bottom-right-radius: var(--border-radius-200);
+        border-bottom-left-radius: var(--border-radius-200);
+
+        @mixin darkBoxShadow;
+    }
+
+    &__content {
+        padding: var(--indent-400);
+    }
+
+    &__title,
+    &__subtitle {
+        margin: 0;
+    }
+
+    &__labels {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: var(--indent-400) var(--indent-400) 0;
+        flex-wrap: wrap;
+    }
+
+    &__labelWrapper {
+        margin-right: var(--indent-200);
+    }
+
+    &__label {
+        background-color: var(--color-blue-800);
+        color: var(--color-white-50);
+        padding: var(--indent-50) var(--indent-100);
+        border-radius: var(--border-radius-50);
+    }
+}
