@@ -3,6 +3,9 @@
     outline: none;
     border-radius: var(--border-radius-100);
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
 
     &_size_s {
         padding: var(--indent-200) var(--indent-300);

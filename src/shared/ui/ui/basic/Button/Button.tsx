@@ -74,9 +74,11 @@ export const Button = forwardRef<HTMLButtonElement & HTMLAnchorElement, PropsWit
         }, [size, ref, onClick, className, theme, color]);
 
         if (href) {
-            <Link href={href} {...memoizedButtonProps}>
-                {children}
-            </Link>;
+            return (
+                <Link href={href} {...memoizedButtonProps}>
+                    {children}
+                </Link>
+            );
         }
 
         return (
