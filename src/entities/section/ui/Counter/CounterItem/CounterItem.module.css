@@ -3,11 +3,11 @@
 .section {
     display: flex;
     align-items: center;
-    padding: var(--indent-400);
     margin-top: var(--indent-400);
-    border-radius: var(--border-radius-200);
 
     @mixin darkBoxShadow;
+    @mixin cardIndent;
+    @mixin cardBorderRadius;
 
     &__rectangle {
         margin: 0 var(--indent-300) 0 0;

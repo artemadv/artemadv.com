@@ -1,3 +1,11 @@
 @define-mixin darkBoxShadow $percent: 50% {
     box-shadow: 0 4px 0 0 rgb(0 0 0 / $(percent));
 }
+
+@define-mixin cardBorderRadius {
+    border-radius: var(--border-radius-200);
+}
+
+@define-mixin cardIndent {
+    padding: var(--indent-400);
+}

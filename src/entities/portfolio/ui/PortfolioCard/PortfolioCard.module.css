@@ -1,15 +1,13 @@
 @import url('../../../../shared/styles/mixins/styles.css');
 
 .portfolioCard {
-    padding-bottom: var(--indent-50);
-    box-sizing: border-box;
-
     &__inner {
-        border-radius: var(--border-radius-200);
         overflow: hidden;
         display: flex;
         flex-direction: column;
         height: 100%;
+
+        @mixin cardBorderRadius;
     }
 
     &__imageWrapper {
@@ -17,7 +15,6 @@
     }
 
     &__fakeImage {
-        padding: var(--indent-400);
         box-sizing: border-box;
         min-height: 300px;
         display: flex;
@@ -26,10 +23,11 @@
         border-bottom-left-radius: var(--border-radius-200);
 
         @mixin darkBoxShadow;
+        @mixin cardIndent;
     }
 
     &__content {
-        padding: var(--indent-400);
+        @mixin cardIndent;
     }
 
     &__title,

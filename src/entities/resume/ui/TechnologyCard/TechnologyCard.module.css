@@ -1,0 +1,23 @@
+@import url('../../../../shared/styles/mixins/styles.css');
+
+.technologyCard {
+    padding-bottom: var(--indent-50);
+    box-sizing: border-box;
+
+    @mixin darkBoxShadow;
+    @mixin cardBorderRadius;
+
+    &__inner {
+        height: 100%;
+
+        @mixin cardIndent;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__subtitle {
+        margin: var(--indent-200) 0 0;
+    }
+}

@@ -7,16 +7,20 @@ import {
     SectionNames,
     TextWithImage,
     Counter,
-    Carousel,
+    CarouselListL,
     SectionExtended,
+    CarouselListM,
+    ColumnList,
 } from '@/entities/section';
 import { PortfolioCard } from '@/entities/portfolio';
+import { TechnologyCard } from '@/entities/resume';
 
 const SECTION_TEMPLATES_MAPPER: { [key in SectionNames]: FC<Section> } = {
     [SectionNames.TextWithImage]: TextWithImage,
     [SectionNames.Counter]: Counter,
-    [SectionNames.CarouselPortfolio]: Carousel,
-    [SectionNames.CarouselSkills]: Carousel,
+    [SectionNames.CarouselPortfolio]: CarouselListL,
+    [SectionNames.CarouselTechnology]: CarouselListM,
+    [SectionNames.WorkList]: ColumnList,
 };
 
 const SECTION_ADDITIONAL_PROPS_MAPPER: {
@@ -24,6 +28,12 @@ const SECTION_ADDITIONAL_PROPS_MAPPER: {
 } = {
     [SectionNames.CarouselPortfolio]: {
         mainSlot: PortfolioCard,
+    },
+    [SectionNames.CarouselTechnology]: {
+        mainSlot: TechnologyCard,
+    },
+    [SectionNames.WorkList]: {
+        mainSlot: TechnologyCard,
     },
 };
 

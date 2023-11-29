@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SectionExtended } from '../../model/types';
@@ -8,15 +8,10 @@ import { SectionExtended } from '../../model/types';
 import { Container } from '@/shared/ui';
 
 import 'swiper/css';
-import styles from './Carousel.module.css';
+import styles from './CarouselListM.module.css';
 
-/*
- * TODO: need style refactoring
- */
-
-export const Carousel: FC<SectionExtended> = (props) => {
-    const { style, nodes, mainSlot } = props;
-    const CarouselItem = mainSlot ?? Fragment;
+export const CarouselListM: FC<SectionExtended> = (props) => {
+    const { style, nodes, mainSlot: CarouselItem } = props;
 
     return (
         <div style={style} className={styles.carousel}>
@@ -30,7 +25,7 @@ export const Carousel: FC<SectionExtended> = (props) => {
                             slidesPerView: 1,
                         },
                         768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                         },
                         992: {
                             slidesPerView: 'auto',
@@ -39,7 +34,9 @@ export const Carousel: FC<SectionExtended> = (props) => {
                 >
                     {nodes?.map((node) => (
                         <SwiperSlide key={node.id} className={styles.carousel__slide}>
-                            <CarouselItem {...node} className={styles.carousel__item} />
+                            {CarouselItem && (
+                                <CarouselItem {...node} className={styles.carousel__item} />
+                            )}
                         </SwiperSlide>
                     ))}
                 </Swiper>

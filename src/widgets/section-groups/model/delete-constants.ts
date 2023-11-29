@@ -9,7 +9,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.TextWithImage,
                 style: {
                     background: 'var(--color-blue-800)',
-                    padding: '150px 0',
+                    padding: '140px 0',
                 },
                 nodes: [
                     {
@@ -53,7 +53,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.TextWithImage,
                 style: {
                     background: 'var(--color-blue-700)',
-                    padding: '150px 0 30px',
+                    padding: '140px 0 30px',
                 },
                 nodes: [
                     {
@@ -81,7 +81,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.Counter,
                 style: {
                     background: 'var(--color-blue-700)',
-                    padding: '0px 0 150px',
+                    padding: '0px 0 140px',
                 },
                 nodes: [
                     {
@@ -144,7 +144,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.TextWithImage,
                 style: {
                     background: 'var(--color-yellow-50)',
-                    padding: '150px 0 50px',
+                    padding: '140px 0 50px',
                 },
                 nodes: [
                     {
@@ -167,7 +167,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                 sectionName: SectionNames.CarouselPortfolio,
                 style: {
                     background: 'var(--color-yellow-50)',
-                    padding: '50px 0 150px',
+                    padding: '50px 0 140px',
                 },
                 nodes: [
                     {
@@ -215,6 +215,190 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                             as: 'h5',
                         },
                         subtitle: 'Coming soon',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-100)',
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'sectionsGroup5',
+        sections: [
+            {
+                id: 'section6',
+                sectionName: SectionNames.TextWithImage,
+                style: {
+                    background: 'var(--color-blue-800)',
+                    padding: '140px 0 50px',
+                },
+                nodes: [
+                    {
+                        id: 'node13',
+                        label: 'My skills',
+                        title: {
+                            text: 'Technologies that I use at work',
+                            as: 'h2',
+                        },
+                        subtitle:
+                            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+                        style: {
+                            color: '#fff',
+                        },
+                    },
+                ],
+            },
+            {
+                id: 'section7',
+                sectionName: SectionNames.CarouselTechnology,
+                style: {
+                    background: 'var(--color-blue-800)',
+                    padding: '50px 0 140px',
+                },
+                nodes: [
+                    {
+                        id: 'node14',
+                        title: {
+                            text: 'React.js',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node15',
+                        title: {
+                            text: 'TypeScript',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node16',
+                        title: {
+                            text: 'GraphQL',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node17',
+                        title: {
+                            text: 'Next.js',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node18',
+                        title: {
+                            text: 'Git',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node19',
+                        title: {
+                            text: 'PostCSS',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'sectionsGroup6',
+        sections: [
+            {
+                id: 'section7',
+                sectionName: SectionNames.TextWithImage,
+                style: {
+                    background: 'var(--color-blue-700)',
+                    padding: '140px 0 50px',
+                },
+                nodes: [
+                    {
+                        id: 'node13',
+                        label: 'Education and work experience',
+                        title: {
+                            text: 'I have more than 3 years of work experience',
+                            as: 'h2',
+                        },
+                        subtitle:
+                            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+                        style: {
+                            color: '#fff',
+                        },
+                    },
+                ],
+            },
+            {
+                id: 'section8',
+                sectionName: SectionNames.WorkList,
+                style: {
+                    background: 'var(--color-blue-700)',
+                    padding: '50px 0 140px',
+                },
+                nodes: [
+                    {
+                        id: 'node14',
+                        title: {
+                            text: 'Frontend developer at the High technology center',
+                            as: 'h5',
+                        },
+                        subtitle: 'Izhevsk',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node15',
+                        title: {
+                            text: 'Corporation Center',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
+                        style: {
+                            color: '#000',
+                            background: 'var(--color-yellow-50)',
+                        },
+                    },
+                    {
+                        id: 'node16',
+                        title: {
+                            text: 'Universal',
+                            as: 'h5',
+                        },
+                        subtitle: 'Description',
                         style: {
                             color: '#000',
                             background: 'var(--color-yellow-100)',

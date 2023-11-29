@@ -7,7 +7,8 @@ export enum SectionNames {
     TextWithImage = 'TextWithImage',
     Counter = 'Counter',
     CarouselPortfolio = 'CarouselPortfolio',
-    CarouselSkills = 'CarouselSkills',
+    CarouselTechnology = 'CarouselTechnology',
+    WorkList = 'WorkList',
 }
 
 export type Section = {
