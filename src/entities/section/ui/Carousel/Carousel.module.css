@@ -11,7 +11,7 @@
         margin-right: var(--indent-300);
     }
 
-    &__portfolio {
+    &__item {
         height: 100%;
     }
 }

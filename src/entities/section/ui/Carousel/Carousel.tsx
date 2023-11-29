@@ -39,7 +39,7 @@ export const Carousel: FC<SectionExtended> = (props) => {
                 >
                     {nodes?.map((node) => (
                         <SwiperSlide key={node.id} className={styles.carousel__slide}>
-                            <CarouselItem {...node} className={styles.carousel__portfolio} />
+                            <CarouselItem {...node} className={styles.carousel__item} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
