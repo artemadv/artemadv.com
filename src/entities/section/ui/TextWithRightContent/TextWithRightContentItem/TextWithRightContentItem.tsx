@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import parse from 'html-react-parser';
 import clsx from 'clsx';
 
@@ -13,10 +13,11 @@ import {
     checkTypographyTag,
 } from '@/shared/ui';
 import { Node } from '@/shared/types';
+import { SectionExtended } from '@/entities/section/model/types';
 
-import styles from './TextWithImageItem.module.css';
+import styles from './TextWithRightContentItem.module.css';
 
-export const TextWithImageItem: FC<Node> = (props) => {
+export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSlot'>> = (props) => {
     const {
         label,
         title: { text: titleText, as: titleAs } = {},
@@ -24,15 +25,26 @@ export const TextWithImageItem: FC<Node> = (props) => {
         image: { alt: imageAlt, src: imageSrc } = {},
         style,
         actions,
+        secondSlot,
     } = props;
-    const hasImage = imageAlt && imageSrc;
+
     const colorTone = getColorToneByTextColor(style?.color);
+    const needRightContent = secondSlot || (imageSrc && imageAlt);
+
+    const RightContent = useCallback(() => {
+        if (secondSlot) return secondSlot;
+        if (imageSrc && imageAlt)
+            return (
+                <AdaptiveImage src={imageSrc} alt={imageAlt} className={styles.section__image} />
+            );
+        return null;
+    }, [secondSlot, imageSrc, imageAlt]);
 
     return (
         <section className={styles.section} style={style}>
             <Container>
                 <Row align="center">
-                    <Col size={hasImage ? { desktop: 7 } : undefined}>
+                    <Col size={needRightContent ? { desktop: 7 } : undefined}>
                         {label && (
                             <Typography
                                 as="span"
@@ -77,13 +89,9 @@ export const TextWithImageItem: FC<Node> = (props) => {
                             </ul>
                         )}
                     </Col>
-                    {hasImage && (
+                    {needRightContent && (
                         <Col size={{ desktop: 5 }}>
-                            <AdaptiveImage
-                                src={imageSrc}
-                                alt={imageAlt}
-                                className={styles.section__image}
-                            />
+                            <RightContent />
                         </Col>
                     )}
                 </Row>

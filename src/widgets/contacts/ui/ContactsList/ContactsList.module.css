@@ -1,0 +1,9 @@
+.contactsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item:not(:first-child) {
+        margin-top: var(--indent-300);
+    }
+}

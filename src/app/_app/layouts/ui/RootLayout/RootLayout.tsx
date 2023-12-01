@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { Header } from '@/widgets/header';
 import { Footer } from '@/widgets/footer';
+import { Contacts } from '@/widgets/contacts';
 
 import styles from './RootLayout.module.css';
 
@@ -38,6 +39,7 @@ export const RootLayout: FC<PropsWithChildren> = ({ children }) => {
             <body className={clsx(inter.className, styles.rootLayout, styles.fullHeight)}>
                 <Header navigationItems={FAKE_NAVIGATION_ITEMS} />
                 <main>{children}</main>
+                <Contacts />
                 <Footer className={styles.rootLayout__footer} />
             </body>
         </html>

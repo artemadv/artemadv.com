@@ -31,6 +31,36 @@
         }
     }
 
+    &_size_h3 {
+        font-size: var(--font-size-800);
+        line-height: 1.5;
+
+        @mixin mediaTablet {
+            font-size: var(--font-size-900);
+            line-height: 1.4;
+        }
+
+        @mixin mediaDesktop {
+            font-size: var(--font-size-1000);
+            line-height: 1.3;
+        }
+    }
+
+    &_size_h4 {
+        font-size: var(--font-size-700);
+        line-height: 1.5;
+
+        @mixin mediaTablet {
+            font-size: var(--font-size-800);
+            line-height: 1.4;
+        }
+
+        @mixin mediaDesktop {
+            font-size: var(--font-size-900);
+            line-height: 1.3;
+        }
+    }
+
     &_size_p {
         font-size: var(--font-size-600);
         line-height: 1.6;

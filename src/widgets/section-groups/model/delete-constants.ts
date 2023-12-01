@@ -6,7 +6,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section1',
-                sectionName: SectionNames.TextWithImage,
+                sectionName: SectionNames.TextWithRightContent,
                 style: {
                     background: 'var(--color-blue-800)',
                     padding: '140px 0',
@@ -50,7 +50,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section2',
-                sectionName: SectionNames.TextWithImage,
+                sectionName: SectionNames.TextWithRightContent,
                 style: {
                     background: 'var(--color-blue-700)',
                     padding: '140px 0 30px',
@@ -141,7 +141,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section4',
-                sectionName: SectionNames.TextWithImage,
+                sectionName: SectionNames.TextWithRightContent,
                 style: {
                     background: 'var(--color-yellow-50)',
                     padding: '140px 0 50px',
@@ -229,7 +229,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section6',
-                sectionName: SectionNames.TextWithImage,
+                sectionName: SectionNames.TextWithRightContent,
                 style: {
                     background: 'var(--color-blue-800)',
                     padding: '140px 0 50px',
@@ -339,7 +339,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
         sections: [
             {
                 id: 'section7',
-                sectionName: SectionNames.TextWithImage,
+                sectionName: SectionNames.TextWithRightContent,
                 style: {
                     background: 'var(--color-blue-700)',
                     padding: '140px 0 50px',
@@ -379,6 +379,11 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                             color: '#000',
                             background: 'var(--color-yellow-50)',
                         },
+                        image: {
+                            src: '/images/htc.svg',
+                            alt: 'image test alt',
+                        },
+                        label: 'from 2021',
                     },
                     {
                         id: 'node15',
@@ -391,11 +396,16 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                             color: '#000',
                             background: 'var(--color-yellow-50)',
                         },
+                        image: {
+                            src: '/images/center.svg',
+                            alt: 'image test alt',
+                        },
+                        label: '2019 - 2021',
                     },
                     {
                         id: 'node16',
                         title: {
-                            text: 'Universal',
+                            text: 'University',
                             as: 'h5',
                         },
                         subtitle: 'Description',
@@ -403,6 +413,7 @@ export const FAKE_MAIN_PAGE_SECTION_GROUPS = [
                             color: '#000',
                             background: 'var(--color-yellow-100)',
                         },
+                        label: '2009 - 2014',
                     },
                 ],
             },

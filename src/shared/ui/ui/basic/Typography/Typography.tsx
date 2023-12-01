@@ -18,6 +18,7 @@ const CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_SIZE: { [key in TypographyTag]?: string }
     h1: styles.typography_size_h1,
     h2: styles.typography_size_h2,
     h3: styles.typography_size_h3,
+    h4: styles.typography_size_h4,
     p: styles.typography_size_p,
 };
 const CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_WEIGHT: { [key in TypographyWeight]?: string } = {

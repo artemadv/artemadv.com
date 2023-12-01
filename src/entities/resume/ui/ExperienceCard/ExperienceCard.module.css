@@ -1,0 +1,55 @@
+@import url('../../../../shared/styles/mixins/styles.css');
+
+.experienceCard {
+    padding-bottom: var(--indent-50);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @mixin darkBoxShadow;
+    @mixin cardBorderRadius;
+    @mixin cardIndent;
+
+    &__imageWrapper {
+        width: var(--width-100);
+    }
+
+    &__info {
+        box-sizing: border-box;
+        padding-left: var(--indent-400);
+        width: calc(100% - var(--width-100));
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__date {
+        margin: var(--indent-100) 0 0;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin: var(--indent-100) 0 0;
+    }
+
+    &__labels {
+        list-style: none;
+        margin: var(--indent-300) 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__labelWrapper {
+        margin-right: var(--indent-200);
+    }
+
+    &__label {
+        background-color: var(--color-blue-800);
+        color: var(--color-white-50);
+        padding: var(--indent-50) var(--indent-100);
+        border-radius: var(--border-radius-50);
+    }
+}

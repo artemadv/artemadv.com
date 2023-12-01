@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 import {
     Section,
     SectionNames,
-    TextWithImage,
+    TextWithRightContent,
     Counter,
     CarouselListL,
     SectionExtended,
@@ -13,10 +13,10 @@ import {
     ColumnList,
 } from '@/entities/section';
 import { PortfolioCard } from '@/entities/portfolio';
-import { TechnologyCard } from '@/entities/resume';
+import { ExperienceCard, TechnologyCard } from '@/entities/resume';
 
 const SECTION_TEMPLATES_MAPPER: { [key in SectionNames]: FC<Section> } = {
-    [SectionNames.TextWithImage]: TextWithImage,
+    [SectionNames.TextWithRightContent]: TextWithRightContent,
     [SectionNames.Counter]: Counter,
     [SectionNames.CarouselPortfolio]: CarouselListL,
     [SectionNames.CarouselTechnology]: CarouselListM,
@@ -33,7 +33,7 @@ const SECTION_ADDITIONAL_PROPS_MAPPER: {
         mainSlot: TechnologyCard,
     },
     [SectionNames.WorkList]: {
-        mainSlot: TechnologyCard,
+        mainSlot: ExperienceCard,
     },
 };
 

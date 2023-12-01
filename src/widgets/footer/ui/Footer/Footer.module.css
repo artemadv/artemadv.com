@@ -1,3 +1,15 @@
 .footer {
-    background-color: green;
+    color: var(--color-white-50);
+    background-color: var(--color-blue-800);
+    padding: var(--indent-800) 0;
+
+    &__bottom {
+        margin-top: var(--indent-400);
+        padding-top: var(--indent-400);
+        border-top: 1px solid var(--color-blue-700);
+    }
+
+    &__text {
+        margin: 0;
+    }
 }

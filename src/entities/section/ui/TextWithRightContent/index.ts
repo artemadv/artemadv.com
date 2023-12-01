@@ -1,0 +1,1 @@
+export { TextWithRightContent } from './TextWithRightContent';

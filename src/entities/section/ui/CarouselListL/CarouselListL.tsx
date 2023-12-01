@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SectionExtended } from '../../model/types';
