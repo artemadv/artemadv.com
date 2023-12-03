@@ -39,18 +39,12 @@
         list-style: none;
         display: flex;
         margin: 0;
-        padding: var(--indent-400) var(--indent-400) 0;
+        padding: var(--indent-200) var(--indent-400) 0;
         flex-wrap: wrap;
     }
 
     &__labelWrapper {
+        margin-top: var(--indent-200);
         margin-right: var(--indent-200);
-    }
-
-    &__label {
-        background-color: var(--color-blue-800);
-        color: var(--color-white-50);
-        padding: var(--indent-50) var(--indent-100);
-        border-radius: var(--border-radius-50);
     }
 }

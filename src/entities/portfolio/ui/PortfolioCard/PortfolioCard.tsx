@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import parse from 'html-react-parser';
 
 import { Node } from '@/shared/types';
-import { Typography, checkTypographyTag } from '@/shared/ui';
+import { Label, Typography, checkTypographyTag } from '@/shared/ui';
 
 import styles from './PortfolioCard.module.css';
 
@@ -46,9 +46,7 @@ export const PortfolioCard: FC<PortfolioCard> = (props) => {
                 <ul className={styles.portfolioCard__labels}>
                     {FAKE_LABELS_PROD.map((label) => (
                         <li key={label} className={styles.portfolioCard__labelWrapper}>
-                            <Typography as="span" className={styles.portfolioCard__label}>
-                                {parse(label)}
-                            </Typography>
+                            <Label>{parse(label)}</Label>
                         </li>
                     ))}
                 </ul>

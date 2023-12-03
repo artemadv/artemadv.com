@@ -14,5 +14,9 @@ export const Contacts: FC = () => {
 
     if (!mainSection) return null;
 
-    return <TextWithRightContent {...mainSection} secondSlot={<ContactsList nodes={nodes} />} />;
+    return (
+        <div id="contacts">
+            <TextWithRightContent {...mainSection} secondSlot={<ContactsList nodes={nodes} />} />
+        </div>
+    );
 };

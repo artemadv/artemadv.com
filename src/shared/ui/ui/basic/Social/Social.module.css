@@ -1,0 +1,29 @@
+.social {
+    display: inline-block;
+    padding: var(--indent-300) var(--indent-500);
+    border-radius: var(--border-radius-50);
+    font-size: var(--font-size-700);
+    text-decoration: none;
+    box-shadow: 0 3px 0 0 rgb(0 0 0 / 50%);
+    transition: opacity 0.3s;
+    box-sizing: border-box;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &_theme_default {
+        background-color: var(--color-blue-800);
+        color: var(--color-white-50);
+    }
+
+    &_theme_linkedIn {
+        background-color: var(--color-linkedin);
+        color: var(--color-white-50);
+    }
+
+    &_theme_gitHub {
+        background-color: var(--color-github);
+        color: var(--color-white-50);
+    }
+}

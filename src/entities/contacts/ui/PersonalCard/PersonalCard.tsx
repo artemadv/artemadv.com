@@ -31,7 +31,7 @@ export const PersonalCard: FC<PersonalCard> = (props) => {
                 {titleText && (
                     <Typography
                         as={checkTypographyTag(titleAs) ? titleAs : 'h4'}
-                        size="h3"
+                        size="h4"
                         weight="bold"
                         className={styles.personalCard__title}
                     >

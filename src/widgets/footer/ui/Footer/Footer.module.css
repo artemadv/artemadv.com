@@ -1,3 +1,5 @@
+@import url('../../../../shared/ui/styles/mixins/media.css');
+
 .footer {
     color: var(--color-white-50);
     background-color: var(--color-blue-800);
@@ -11,5 +13,38 @@
 
     &__text {
         margin: 0;
+    }
+
+    &__personalCard {
+        margin-top: var(--indent-300);
+
+        @mixin mediaTablet {
+            margin-top: 0;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: column;
+
+        @mixin mediaDesktop {
+            flex-flow: wrap;
+        }
+    }
+
+    &__listItem:not(:first-child) {
+        margin-top: var(--indent-200);
+
+        @mixin mediaDesktop {
+            margin-left: var(--indent-200);
+            margin-top: 0;
+        }
+    }
+
+    &__label {
+        width: 100%;
     }
 }

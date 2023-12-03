@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import parse from 'html-react-parser';
 
 import { Node } from '@/shared/types';
-import { AdaptiveImage, Typography, checkTypographyTag } from '@/shared/ui';
+import { AdaptiveImage, Label, Typography, checkTypographyTag } from '@/shared/ui';
 
 import styles from './ExperienceCard.module.css';
 
@@ -58,9 +58,7 @@ export const ExperienceCard: FC<ExperienceCard> = (props) => {
                 <ul className={styles.experienceCard__labels}>
                     {FAKE_LABELS_PROD.map((label) => (
                         <li key={label} className={styles.experienceCard__labelWrapper}>
-                            <Typography as="span" className={styles.experienceCard__label}>
-                                {parse(label)}
-                            </Typography>
+                            <Label>{parse(label)}</Label>
                         </li>
                     ))}
                 </ul>

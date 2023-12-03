@@ -1,0 +1,7 @@
+.label {
+    display: inline-block;
+    background-color: var(--color-blue-800);
+    color: var(--color-white-50);
+    padding: var(--indent-50) var(--indent-100);
+    border-radius: var(--border-radius-50);
+}

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { FAKE_FOOTER_SECTION } from '../../model/delete-constants';
 
-import { Col, Container, Row, Typography } from '@/shared/ui';
+import { Col, Container, Row, Social, Typography } from '@/shared/ui';
 import { PersonalCard } from '@/entities/contacts';
 
 import styles from './Footer.module.css';
@@ -19,12 +19,33 @@ export const Footer: FC<Footer> = ({ className }) => {
         <footer className={clsx(styles.footer, className)}>
             <Container>
                 <Row>
+                    <Col size={{ tablet: 4, desktop: 5, desktopLarge: 7 }}>
+                        <ul className={styles.footer__list}>
+                            <li className={styles.footer__listItem}>
+                                <Social
+                                    className={styles.footer__label}
+                                    name="LinkedIn"
+                                    href="https://www.linkedin.com/in/artem-karakulov-40b28b123/"
+                                >
+                                    LinkedIn
+                                </Social>
+                            </li>
+                            <li className={styles.footer__listItem}>
+                                <Social
+                                    className={styles.footer__label}
+                                    name="GitHub"
+                                    href="https://github.com/artemadv"
+                                >
+                                    GitHub
+                                </Social>
+                            </li>
+                        </ul>
+                    </Col>
                     {nodes?.length && (
-                        <Col size={{ desktop: 6 }}>
-                            <PersonalCard {...nodes[0]} />
+                        <Col size={{ tablet: 8, desktop: 7, desktopLarge: 5 }}>
+                            <PersonalCard className={styles.footer__personalCard} {...nodes[0]} />
                         </Col>
                     )}
-                    <Col size={{ desktop: 6 }}>2</Col>
                 </Row>
                 <div className={styles.footer__bottom}>
                     <Typography className={styles.footer__text}>© artemadv</Typography>
