@@ -17,7 +17,7 @@
         margin: 0;
     }
 
-    &__subtitle {
+    &__description {
         margin: var(--indent-200) 0 0;
     }
 }

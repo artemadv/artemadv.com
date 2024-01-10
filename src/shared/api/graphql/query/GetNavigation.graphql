@@ -1,0 +1,9 @@
+query GetNavigation($name: MenuAvailable!) {
+    menu(name: $name) {
+        items {
+            id
+            title
+            url
+        }
+    }
+}

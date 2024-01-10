@@ -4,4 +4,4 @@ export { Counter } from './ui/Counter';
 export { TextWithRightContent } from './ui/TextWithRightContent';
 export { ColumnList } from './ui/ColumnList';
 
-export { SectionNames, SectionType, type Section, type SectionExtended } from './model/types';
+export { SectionNames, SectionType, type SectionExtended } from './model/types';

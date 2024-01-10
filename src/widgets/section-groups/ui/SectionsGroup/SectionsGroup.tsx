@@ -2,19 +2,14 @@ import React, { FC } from 'react';
 
 import { SectionItem } from '../SectionItem';
 
-import { Section } from '@/entities/section';
+import { SectionsGroup as SectionsGroupType } from '@/shared/api';
 
-interface SectionsGroup {
-    id: string;
-    sections?: Section[];
-}
-
-export const SectionsGroup: FC<SectionsGroup> = ({ sections }) => {
+export const SectionsGroup: FC<SectionsGroupType> = ({ sections }) => {
     return (
-        <div>
+        <>
             {sections?.map((section) => (
                 <SectionItem key={section.id} {...section} />
             ))}
-        </div>
+        </>
     );
 };

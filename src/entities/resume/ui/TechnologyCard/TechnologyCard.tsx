@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import parse from 'html-react-parser';
 
-import { Node } from '@/shared/types';
 import { Typography, checkTypographyTag } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/libs';
+import { Node } from '@/shared/api';
 
 import styles from './TechnologyCard.module.css';
 
@@ -12,7 +13,8 @@ type TechnologyCard = Node & {
 };
 
 export const TechnologyCard: FC<TechnologyCard> = (props) => {
-    const { title: { text: titleText, as: titleAs } = {}, subtitle, style, className } = props;
+    const { titleText, titleAs, description, className } = props;
+    const style = createStyleFromNodeFields(props);
 
     return (
         <article style={style} className={clsx(styles.technologyCard, className)}>
@@ -28,9 +30,9 @@ export const TechnologyCard: FC<TechnologyCard> = (props) => {
                     </Typography>
                 )}
 
-                {subtitle && (
-                    <Typography className={styles.technologyCard__subtitle}>
-                        {parse(subtitle)}
+                {description?.value && (
+                    <Typography className={styles.technologyCard__description}>
+                        {parse(description.value)}
                     </Typography>
                 )}
             </div>

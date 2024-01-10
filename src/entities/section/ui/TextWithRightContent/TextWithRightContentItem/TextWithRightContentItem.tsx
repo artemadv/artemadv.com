@@ -2,7 +2,11 @@ import React, { FC, useCallback } from 'react';
 import parse from 'html-react-parser';
 import clsx from 'clsx';
 
-import { getColorToneByTextColor } from '@/shared/libs';
+import {
+    createStyleFromNodeFields,
+    getColorToneByTextColor,
+    createActionsFromNodeFields,
+} from '@/shared/libs';
 import {
     AdaptiveImage,
     Button,
@@ -12,49 +16,48 @@ import {
     Typography,
     checkTypographyTag,
 } from '@/shared/ui';
-import { Node } from '@/shared/types';
+import { Node } from '@/shared/api';
 import { SectionExtended } from '@/entities/section/model/types';
 
 import styles from './TextWithRightContentItem.module.css';
 
 export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSlot'>> = (props) => {
-    const {
-        label,
-        title: { text: titleText, as: titleAs } = {},
-        subtitle,
-        image: { alt: imageAlt, src: imageSrc } = {},
-        style,
-        actions,
-        secondSlot,
-    } = props;
+    const { titleAs, titleText, subtitle, image, secondSlot, description } = props;
 
+    const style = createStyleFromNodeFields(props);
+    const actions = createActionsFromNodeFields(props);
     const colorTone = getColorToneByTextColor(style?.color);
-    const needRightContent = secondSlot || (imageSrc && imageAlt);
+    const needRightContent = secondSlot || image;
 
     const RightContent = useCallback(() => {
         if (secondSlot) return secondSlot;
-        if (imageSrc && imageAlt)
+        if (image) {
             return (
-                <AdaptiveImage src={imageSrc} alt={imageAlt} className={styles.section__image} />
+                <AdaptiveImage
+                    src={image.url}
+                    alt={image.alt || ''}
+                    className={styles.section__image}
+                />
             );
+        }
         return null;
-    }, [secondSlot, imageSrc, imageAlt]);
+    }, [secondSlot, image]);
 
     return (
         <section className={styles.section} style={style}>
             <Container>
                 <Row align="center">
                     <Col size={needRightContent ? { desktop: 7 } : undefined}>
-                        {label && (
+                        {subtitle && (
                             <Typography
                                 as="span"
                                 weight="medium"
-                                className={clsx(styles.section__label, {
-                                    [styles.section__label_theme_light]: colorTone === 'light',
-                                    [styles.section__label_theme_dark]: colorTone === 'dark',
+                                className={clsx(styles.section__subtitle, {
+                                    [styles.section__subtitle_theme_light]: colorTone === 'light',
+                                    [styles.section__subtitle_theme_dark]: colorTone === 'dark',
                                 })}
                             >
-                                {parse(label)}
+                                {parse(subtitle)}
                             </Typography>
                         )}
                         {titleText && (
@@ -66,9 +69,9 @@ export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSl
                                 {parse(titleText)}
                             </Typography>
                         )}
-                        {subtitle && (
-                            <Typography as="p" className={styles.section__subtitle}>
-                                {parse(subtitle)}
+                        {description?.value && (
+                            <Typography as="p" className={styles.section__description}>
+                                {parse(description.value)}
                             </Typography>
                         )}
                         {Boolean(actions) && (

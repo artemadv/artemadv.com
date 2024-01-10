@@ -3,7 +3,8 @@ import parse from 'html-react-parser';
 import clsx from 'clsx';
 
 import { Typography } from '@/shared/ui';
-import { Node } from '@/shared/types';
+import { createStyleFromNodeFields } from '@/shared/libs';
+import { Node } from '@/shared/api';
 
 import styles from './CounterItem.module.css';
 
@@ -12,7 +13,8 @@ type CounterItem = Node & {
 };
 
 export const CounterItem: FC<CounterItem> = (props) => {
-    const { title: { text: titleText } = {}, subtitle, style, className } = props;
+    const { titleText, description, className } = props;
+    const style = createStyleFromNodeFields(props);
 
     return (
         <div style={style} className={clsx(styles.section, className)}>
@@ -21,8 +23,8 @@ export const CounterItem: FC<CounterItem> = (props) => {
                     {parse(titleText)}
                 </Typography>
             )}
-            {subtitle && (
-                <Typography className={styles.section__text}>{parse(subtitle)}</Typography>
+            {description?.value && (
+                <Typography className={styles.section__text}>{parse(description.value)}</Typography>
             )}
         </div>
     );

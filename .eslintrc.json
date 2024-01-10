@@ -29,6 +29,7 @@
         "camelcase": ["error", { "properties": "always" }],
         "semi-spacing": ["error", { "before": false, "after": false }],
         "no-multi-spaces": ["error", { "ignoreEOLComments": false }],
+        "no-underscore-dangle": ["error", { "allow": ["__typename"] }],
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "no-restricted-exports": ["error", { "restrictedNamedExports": ["namedFrom"] }],
         "no-shadow": "off",
@@ -37,6 +38,7 @@
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",
         "react/button-has-type": "off",
+        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
         "import/no-internal-modules": "off",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
@@ -63,5 +65,14 @@
             }
         ],
         "@typescript-eslint/no-shadow": "error"
-    }
+    },
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off"
+            }
+        }
+    ],
+    "ignorePatterns": ["generated-schema.ts"]
 }

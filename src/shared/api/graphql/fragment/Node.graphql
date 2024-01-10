@@ -1,0 +1,20 @@
+fragment Node on NodeNode {
+    id
+    actionTitle
+    actionUrl
+    image {
+        url
+        alt
+    }
+    description {
+        value
+    }
+    styleBackground
+    styleColor
+    stylePadding
+    subtitle
+    titleAs
+    titleText
+    labels
+    special
+}

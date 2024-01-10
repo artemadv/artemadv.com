@@ -15,14 +15,18 @@
         "lint:css": "stylelint \"src/**/*.module.css\"",
         "lint:css:fix": "stylelint \"src/**/*.module.css\" --fix",
         "check-types": "tsc --noEmit",
-        "check-exports": "ts-prune --ignore 'src/app'",
-        "lint:all": "concurrently \"npm run lint\" \"npm run check-types\" \"npm run check-exports\" \"npm run lint:css\""
+        "check-exports": "ts-prune --skip 'codegen.ts|.next|generated-schema.ts' --ignore 'src/app'",
+        "lint:all": "concurrently \"npm run lint\" \"npm run check-types\" \"npm run check-exports\" \"npm run lint:css\"",
+        "graphql": "graphql-codegen"
     },
     "dependencies": {
+        "@apollo/client": "^3.8.8",
+        "@apollo/experimental-nextjs-app-support": "^0.5.2",
         "@types/node": "20.2.5",
-        "@types/react": "18.2.7",
+        "@types/react": "^18.2.42",
         "@types/react-dom": "18.2.4",
         "clsx": "^1.2.1",
+        "graphql": "^16.8.1",
         "html-react-parser": "^4.0.0",
         "next": "13.4.4",
         "react": "18.2.0",
@@ -31,6 +35,10 @@
     },
     "devDependencies": {
         "@feature-sliced/eslint-config": "^0.1.0-beta.6",
+        "@graphql-codegen/cli": "^5.0.0",
+        "@graphql-codegen/typescript": "^4.0.1",
+        "@graphql-codegen/typescript-operations": "^4.0.1",
+        "@graphql-codegen/typescript-react-apollo": "^4.1.0",
         "@typescript-eslint/eslint-plugin": "^5.59.9",
         "@typescript-eslint/parser": "^5.59.9",
         "autoprefixer": "^10.4.14",

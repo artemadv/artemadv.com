@@ -1,0 +1,8 @@
+#import "./Section.graphql";
+
+fragment SectionGroup on NodeSectionGroup {
+    id
+    sections {
+        ...Section
+    }
+}

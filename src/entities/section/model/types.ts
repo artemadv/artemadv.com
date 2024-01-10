@@ -1,8 +1,7 @@
-import { CSSProperties, FC } from 'react';
+import { FC } from 'react';
 
-import { Node } from '@/shared/types';
+import { Node, Section } from '@/shared/api';
 
-// TODO refactoring
 export enum SectionNames {
     TextWithRightContent = 'TextWithRightContent',
     Counter = 'Counter',
@@ -15,14 +14,6 @@ export enum SectionType {
     Main = 'Main',
     Basic = 'Basic',
 }
-
-export type Section = {
-    id: string;
-    sectionName: SectionNames;
-    sectionType?: SectionType;
-    style?: CSSProperties;
-    nodes?: Node[];
-};
 
 export type SectionExtended = Section & {
     mainSlot?: FC<Node & { className?: string }>; // To expand logic in sections

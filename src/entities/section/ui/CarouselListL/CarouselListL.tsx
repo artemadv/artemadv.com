@@ -6,12 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionExtended } from '../../model/types';
 
 import { Container } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/libs';
 
 import 'swiper/css';
 import styles from './CarouselListL.module.css';
 
 export const CarouselListL: FC<SectionExtended> = (props) => {
-    const { style, nodes, mainSlot: CarouselItem } = props;
+    const { nodes, mainSlot: CarouselItem } = props;
+    const style = createStyleFromNodeFields(props);
 
     return (
         <div style={style} className={styles.carousel}>

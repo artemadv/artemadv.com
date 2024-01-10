@@ -1,0 +1,24 @@
+@import url('../../../../shared/styles/mixins/styles.css');
+
+.contactCard {
+    box-sizing: border-box;
+    text-decoration: none;
+    display: block;
+    transition: opacity 0.3s;
+
+    @mixin darkBoxShadow;
+    @mixin cardBorderRadius;
+    @mixin cardIndent;
+
+    &:link:hover {
+        opacity: 0.85;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__description {
+        margin: var(--indent-200) 0 0;
+    }
+}

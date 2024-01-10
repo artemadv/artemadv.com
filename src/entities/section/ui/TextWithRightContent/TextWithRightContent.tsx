@@ -4,8 +4,11 @@ import { SectionExtended } from '../../model/types';
 
 import { TextWithRightContentItem } from './TextWithRightContentItem';
 
+import { createStyleFromNodeFields } from '@/shared/libs';
+
 export const TextWithRightContent: FC<SectionExtended> = (props) => {
-    const { style, nodes, secondSlot } = props;
+    const { nodes, secondSlot } = props;
+    const style = createStyleFromNodeFields(props);
     const node = nodes?.[0];
 
     if (!node) return null;

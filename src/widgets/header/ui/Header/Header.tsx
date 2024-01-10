@@ -2,18 +2,19 @@ import React, { FC } from 'react';
 
 import { Logotype } from '../Logotype';
 import { Navigation } from '../Navigation';
-import { NavigationItem } from '../../model/types';
 
 import { Col, Container, Row } from '@/shared/ui';
+import { useNavigation } from '@/shared/api/server-only';
+import { MenuAvailable } from '@/shared/api';
 
 import styles from './Header.module.css';
 
-type Header = {
-    navigationItems?: NavigationItem[];
-};
-
-export const Header: FC<Header> = (props) => {
-    const { navigationItems } = props;
+export const Header: FC = async () => {
+    const { menu, loading: isLoading } = await useNavigation({
+        variables: {
+            name: MenuAvailable.HeaderMenu,
+        },
+    });
 
     return (
         <header className={styles.header}>
@@ -24,9 +25,10 @@ export const Header: FC<Header> = (props) => {
                     </Col>
                     <Col size={{ mobile: 8 }}>
                         <Navigation
+                            isLoading={isLoading}
                             className={styles.header__navigation}
                             classNameList={styles.header__navigationList}
-                            items={navigationItems}
+                            menu={menu}
                         />
                     </Col>
                 </Row>

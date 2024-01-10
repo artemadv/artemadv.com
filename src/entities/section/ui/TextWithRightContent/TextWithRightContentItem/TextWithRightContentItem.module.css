@@ -1,7 +1,7 @@
 @import url('../../../../../shared/ui/styles/mixins/media.css');
 
 .section {
-    &__label {
+    &__subtitle {
         margin: 0;
         text-transform: uppercase;
         display: flex;
@@ -14,13 +14,13 @@
         }
     }
 
-    &__label_theme_light {
+    &__subtitle_theme_light {
         &::before {
             color: var(--color-yellow-100);
         }
     }
 
-    &__label_theme_dark {
+    &__subtitle_theme_dark {
         &::before {
             color: var(--color-blue-800);
         }
@@ -30,7 +30,7 @@
         margin: var(--indent-200) 0 0;
     }
 
-    &__subtitle {
+    &__description {
         margin: var(--indent-300) 0 0;
     }
 

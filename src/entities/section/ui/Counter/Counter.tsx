@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 
-import { Section } from '../../model/types';
-
 import { CounterItem } from './CounterItem';
 
 import { Container, Row, Col } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/libs';
+import { Section } from '@/shared/api';
 
 import styles from './Counter.module.css';
 
 export const Counter: FC<Section> = (props) => {
-    const { style, nodes } = props;
+    const { nodes } = props;
+    const style = createStyleFromNodeFields(props);
 
     return (
         <div style={style}>

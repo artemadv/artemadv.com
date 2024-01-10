@@ -1,29 +1,33 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { NavigationItem } from '../../model/types';
-
 import { ActiveLink } from '@/shared/ui';
+import { GetNavigationQuery } from '@/shared/api';
 
 import styles from './Navigation.module.css';
 
 type Navigation = {
-    items?: NavigationItem[];
+    isLoading: boolean;
+    menu: GetNavigationQuery['menu'];
     className?: string;
     classNameList?: string;
 };
 
 export const Navigation: FC<Navigation> = (props) => {
-    const { items, className, classNameList } = props;
+    const { menu, className, classNameList, isLoading } = props;
 
-    if (!items) {
+    if (isLoading) {
+        return <>...</>;
+    }
+
+    if (!menu?.items) {
         return null;
     }
 
     return (
         <nav className={clsx(styles.navigation, className)}>
             <ul className={clsx(styles.navigation__list, classNameList)}>
-                {items.map(({ id, href, text }, index) => (
+                {menu.items.map(({ id, url, title }, index) => (
                     <li
                         key={id}
                         className={clsx(styles.navigation__item, {
@@ -33,9 +37,9 @@ export const Navigation: FC<Navigation> = (props) => {
                         <ActiveLink
                             className={styles.navigation__link}
                             activeClassName={styles.navigation__link_theme_active}
-                            href={href}
+                            href={url || '/'}
                         >
-                            {text}
+                            {title}
                         </ActiveLink>
                     </li>
                 ))}

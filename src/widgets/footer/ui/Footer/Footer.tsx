@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { FAKE_FOOTER_SECTION } from '../../model/delete-constants';
-
 import { Col, Container, Row, Social, Typography } from '@/shared/ui';
-import { PersonalCard } from '@/entities/contacts';
+import { PersonalCard } from '@/entities/contact';
+import { SectionType } from '@/entities/section';
+import { useSectionGroups } from '@/shared/api/server-only';
 
 import styles from './Footer.module.css';
 
@@ -12,38 +12,44 @@ type Footer = {
     className?: string;
 };
 
-export const Footer: FC<Footer> = ({ className }) => {
-    const { nodes } = FAKE_FOOTER_SECTION;
+export const Footer: FC<Footer> = async ({ className }) => {
+    const { sections } = await useSectionGroups({
+        variables: {
+            path: 'widget-footer',
+        },
+    });
+
+    const { nodes: mainNodes } =
+        sections.find((section) => section?.sectionType === SectionType.Main) ?? {};
+    const { nodes } = sections.find((section) => section?.sectionType === SectionType.Basic) ?? {};
 
     return (
         <footer className={clsx(styles.footer, className)}>
             <Container>
                 <Row>
-                    <Col size={{ tablet: 4, desktop: 5, desktopLarge: 7 }}>
-                        <ul className={styles.footer__list}>
-                            <li className={styles.footer__listItem}>
-                                <Social
-                                    className={styles.footer__label}
-                                    name="LinkedIn"
-                                    href="https://www.linkedin.com/in/artem-karakulov-40b28b123/"
-                                >
-                                    LinkedIn
-                                </Social>
-                            </li>
-                            <li className={styles.footer__listItem}>
-                                <Social
-                                    className={styles.footer__label}
-                                    name="GitHub"
-                                    href="https://github.com/artemadv"
-                                >
-                                    GitHub
-                                </Social>
-                            </li>
-                        </ul>
-                    </Col>
-                    {nodes?.length && (
+                    {nodes && (
+                        <Col size={{ tablet: 4, desktop: 5, desktopLarge: 7 }}>
+                            <ul className={styles.footer__list}>
+                                {nodes.map(({ actionTitle, actionUrl, special, id }) => (
+                                    <li key={id} className={styles.footer__listItem}>
+                                        <Social
+                                            className={styles.footer__label}
+                                            name={special}
+                                            href={actionUrl?.[0]}
+                                        >
+                                            {actionTitle?.[0]}
+                                        </Social>
+                                    </li>
+                                ))}
+                            </ul>
+                        </Col>
+                    )}
+                    {mainNodes && (
                         <Col size={{ tablet: 8, desktop: 7, desktopLarge: 5 }}>
-                            <PersonalCard className={styles.footer__personalCard} {...nodes[0]} />
+                            <PersonalCard
+                                className={styles.footer__personalCard}
+                                {...mainNodes[0]}
+                            />
                         </Col>
                     )}
                 </Row>

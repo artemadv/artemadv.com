@@ -1,0 +1,12 @@
+#import "./Node.graphql";
+
+fragment Section on NodeSection {
+    id
+    nodes {
+        ...Node
+    }
+    sectionName
+    sectionType
+    styleBackground
+    stylePadding
+}

@@ -3,11 +3,13 @@ import React, { FC } from 'react';
 import { SectionExtended } from '../../model/types';
 
 import { Container } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/libs';
 
 import styles from './ColumnList.module.css';
 
 export const ColumnList: FC<SectionExtended> = (props) => {
-    const { style, nodes, mainSlot: ListItem } = props;
+    const { nodes, mainSlot: ListItem } = props;
+    const style = createStyleFromNodeFields(props);
 
     if (!ListItem) return null;
 

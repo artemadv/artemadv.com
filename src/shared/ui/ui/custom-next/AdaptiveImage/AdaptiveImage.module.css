@@ -9,6 +9,5 @@
     &__element {
         position: relative !important;
         height: auto !important;
-        max-width: var(--width-400);
     }
 }

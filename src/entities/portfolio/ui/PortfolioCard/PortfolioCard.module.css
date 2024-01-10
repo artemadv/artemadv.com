@@ -8,38 +8,39 @@
         height: 100%;
 
         @mixin cardBorderRadius;
+        @mixin darkBoxShadow;
     }
 
     &__imageWrapper {
         position: relative;
     }
 
-    &__fakeImage {
-        box-sizing: border-box;
-        min-height: 300px;
-        display: flex;
-        align-items: center;
+    &__image {
         border-bottom-right-radius: var(--border-radius-200);
         border-bottom-left-radius: var(--border-radius-200);
-
-        @mixin darkBoxShadow;
-        @mixin cardIndent;
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
         @mixin cardIndent;
     }
 
-    &__title,
-    &__subtitle {
+    &__title {
         margin: 0;
+    }
+
+    &__description {
+        margin-top: var(--indent-200);
     }
 
     &__labels {
         list-style: none;
         display: flex;
-        margin: 0;
-        padding: var(--indent-200) var(--indent-400) 0;
+        margin: auto 0 0;
+        padding: 0;
         flex-wrap: wrap;
     }
 

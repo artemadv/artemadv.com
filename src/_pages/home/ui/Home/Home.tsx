@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import { FAKE_MAIN_PAGE_SECTION_GROUPS, SectionsGroup } from '@/widgets/section-groups';
+import { SectionsGroup } from '@/widgets/section-groups';
+import { usePageConfig } from '@/shared/api/server-only';
 
-export const Home = () => {
+export const Home: FC = async () => {
+    const { sectionsGroup } = await usePageConfig({
+        variables: {
+            path: 'home',
+        },
+    });
+
     return (
         <>
-            {FAKE_MAIN_PAGE_SECTION_GROUPS.map((sectionsGroup) => (
-                <SectionsGroup key={sectionsGroup.id} {...sectionsGroup} />
+            {sectionsGroup.map((group) => (
+                <SectionsGroup key={group.id} {...group} />
             ))}
         </>
     );
