@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionExtended } from '../../model/types';
 
 import { Container } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { createStyleFromNodeFields } from '@/shared/lib';
 
 import 'swiper/css';
 import styles from './CarouselListL.module.css';

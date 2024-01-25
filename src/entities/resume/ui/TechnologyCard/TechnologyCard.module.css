@@ -4,13 +4,13 @@
     padding-bottom: var(--indent-50);
     box-sizing: border-box;
 
-    @mixin darkBoxShadow;
-    @mixin cardBorderRadius;
+    @include darkBoxShadow;
+    @include cardBorderRadius;
 
     &__inner {
         height: 100%;
 
-        @mixin cardIndent;
+        @include cardIndent;
     }
 
     &__title {

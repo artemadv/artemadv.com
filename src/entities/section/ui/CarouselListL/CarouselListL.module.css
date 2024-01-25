@@ -1,3 +1,5 @@
+@import url('../../../../shared/ui/styles/mixins/media.css');
+
 .carousel {
     overflow: hidden;
 
@@ -6,9 +8,13 @@
     }
 
     &__slide {
-        max-width: 550px;
+        max-width: var(--width-300);
         height: auto;
         margin-right: var(--indent-300);
+
+        @include mediaTablet() {
+            max-width: var(--width-500);
+        }
     }
 
     &__item {

@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import clsx from 'clsx';
 
 import { Typography } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { createStyleFromNodeFields } from '@/shared/lib';
 import { Node } from '@/shared/api';
 
 import styles from './CounterItem.module.css';

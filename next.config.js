@@ -1,13 +1,23 @@
-const { API_URL } = require('./site.config');
+const { API_URL } = require('./src/shared/config/site.config');
 
 const createDomains = (unformattedDomains) => {
     return unformattedDomains.map((domain) => {
-        return domain.replace(/(https?:\/\/)?(www.)?/i, '');
+        return {
+            hostname: domain.replace(/(https?:\/\/)?(www.)?/i, ''),
+        };
     });
 };
 
 module.exports = {
     images: {
-        domains: createDomains([API_URL]),
+        remotePatterns: createDomains([API_URL]),
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/graphql',
+                destination: `${API_URL}/graphql`,
+            },
+        ];
     },
 };

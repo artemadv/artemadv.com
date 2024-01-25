@@ -5,9 +5,9 @@
     align-items: center;
     margin-top: var(--indent-400);
 
-    @mixin darkBoxShadow;
-    @mixin cardIndent;
-    @mixin cardBorderRadius;
+    @include darkBoxShadow;
+    @include cardIndent;
+    @include cardBorderRadius;
 
     &__rectangle {
         margin: 0 var(--indent-300) 0 0;

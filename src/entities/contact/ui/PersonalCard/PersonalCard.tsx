@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import parse from 'html-react-parser';
 
 import { Node } from '@/shared/api';
-import { AdaptiveImage, Typography, checkTypographyTag } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { AdaptiveImage, Typography } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/lib';
 
 import styles from './PersonalCard.module.css';
 
@@ -26,7 +26,7 @@ export const PersonalCard: FC<PersonalCard> = (props) => {
             <div className={styles.personalCard__info}>
                 {titleText && (
                     <Typography
-                        as={checkTypographyTag(titleAs) ? titleAs : 'h4'}
+                        as={titleAs}
                         size="h4"
                         weight="bold"
                         className={styles.personalCard__title}

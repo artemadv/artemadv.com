@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { SectionExtended } from '../../model/types';
 
 import { Container } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { createStyleFromNodeFields } from '@/shared/lib';
 
 import styles from './ColumnList.module.css';
 

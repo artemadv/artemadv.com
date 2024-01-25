@@ -1,4 +1,6 @@
-export { makeClient } from './libs/make-apollo-client';
+export { getNavigation } from './query/get-navigation';
+export { getSectionGroups } from './query/get-sections-group';
+export { getPageConfig } from './query/get-page-config';
 export {
     type NodeNode as Node,
     type GetNavigationQuery,

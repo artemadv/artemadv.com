@@ -1,10 +1,12 @@
 #import "../fragment/SectionGroup.graphql";
 
-query GetSectionsGroup($path: String!) {
-    route(path: $path) {
+query GetSectionsGroup($path: String!, $langcode: String!) {
+    route(path: $path, langcode: $langcode) {
         ... on RouteInternal {
             entity {
-                ...SectionGroup
+                ... on NodeSectionGroup {
+                    ...SectionGroup
+                }
             }
         }
     }

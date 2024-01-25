@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import parse from 'html-react-parser';
 
-import { AdaptiveImage, Label, Typography, checkTypographyTag } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { AdaptiveImage, Label, Typography } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/lib';
 import { Node } from '@/shared/api';
 
 import styles from './PortfolioCard.module.css';
@@ -13,7 +13,7 @@ type PortfolioCard = Node & {
 };
 
 export const PortfolioCard: FC<PortfolioCard> = (props) => {
-    const { titleText, titleAs, description, image, className, labels } = props;
+    const { titleText, titleAs, description, image, className, labels, subtitle: date } = props;
     const style = createStyleFromNodeFields(props);
 
     return (
@@ -27,12 +27,21 @@ export const PortfolioCard: FC<PortfolioCard> = (props) => {
                             className={styles.portfolioCard__image}
                         />
                     )}
+
+                    {date && (
+                        <Typography
+                            className={styles.portfolioCard__date}
+                            style={{ background: style.background }}
+                        >
+                            {parse(date)}
+                        </Typography>
+                    )}
                 </div>
 
                 <div className={clsx(styles.portfolioCard__content)}>
                     {titleText && image && (
                         <Typography
-                            as={checkTypographyTag(titleAs) ? titleAs : 'h3'}
+                            as={titleAs}
                             size="h2"
                             weight="bold"
                             className={styles.portfolioCard__title}

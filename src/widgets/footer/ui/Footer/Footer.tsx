@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Col, Container, Row, Social, Typography } from '@/shared/ui';
 import { PersonalCard } from '@/entities/contact';
 import { SectionType } from '@/entities/section';
-import { useSectionGroups } from '@/shared/api/server-only';
+import { getSectionGroups } from '@/shared/api';
 
 import styles from './Footer.module.css';
 
@@ -13,7 +13,7 @@ type Footer = {
 };
 
 export const Footer: FC<Footer> = async ({ className }) => {
-    const { sections } = await useSectionGroups({
+    const { sections } = await getSectionGroups({
         variables: {
             path: 'widget-footer',
         },
@@ -28,7 +28,7 @@ export const Footer: FC<Footer> = async ({ className }) => {
             <Container>
                 <Row>
                     {nodes && (
-                        <Col size={{ tablet: 4, desktop: 5, desktopLarge: 7 }}>
+                        <Col size={{ mediaTablet: 4, mediaDesktop: 5, mediaDesktopLarge: 7 }}>
                             <ul className={styles.footer__list}>
                                 {nodes.map(({ actionTitle, actionUrl, special, id }) => (
                                     <li key={id} className={styles.footer__listItem}>
@@ -45,7 +45,7 @@ export const Footer: FC<Footer> = async ({ className }) => {
                         </Col>
                     )}
                     {mainNodes && (
-                        <Col size={{ tablet: 8, desktop: 7, desktopLarge: 5 }}>
+                        <Col size={{ mediaTablet: 8, mediaDesktop: 7, mediaDesktopLarge: 5 }}>
                             <PersonalCard
                                 className={styles.footer__personalCard}
                                 {...mainNodes[0]}

@@ -3,10 +3,8 @@ import React, { FC } from 'react';
 import { CounterItem } from './CounterItem';
 
 import { Container, Row, Col } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { createStyleFromNodeFields } from '@/shared/lib';
 import { Section } from '@/shared/api';
-
-import styles from './Counter.module.css';
 
 export const Counter: FC<Section> = (props) => {
     const { nodes } = props;
@@ -16,11 +14,11 @@ export const Counter: FC<Section> = (props) => {
         <div style={style}>
             <Container>
                 <Row>
-                    <Col>
-                        <hr className={styles.hr} />
-                    </Col>
                     {nodes?.map((node) => (
-                        <Col key={node.id} size={{ mobile: 6, desktop: 4, desktopLarge: 3 }}>
+                        <Col
+                            key={node.id}
+                            size={{ mediaMobile: 6, mediaDesktop: 4, mediaDesktopLarge: 3 }}
+                        >
                             <CounterItem {...node} />
                         </Col>
                     ))}

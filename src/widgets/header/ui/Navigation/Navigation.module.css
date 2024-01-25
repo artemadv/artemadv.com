@@ -19,6 +19,7 @@
     &__link {
         color: var(--color-dark-900);
         text-decoration: none;
+        white-space: nowrap;
     }
 
     &__link:hover {

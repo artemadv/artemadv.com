@@ -7,8 +7,8 @@
         flex-direction: column;
         height: 100%;
 
-        @mixin cardBorderRadius;
-        @mixin darkBoxShadow;
+        @include cardBorderRadius;
+        @include darkBoxShadow;
     }
 
     &__imageWrapper {
@@ -20,12 +20,23 @@
         border-bottom-left-radius: var(--border-radius-200);
     }
 
+    &__date {
+        margin: 0;
+        padding: var(--indent-100) var(--indent-400);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-top-right-radius: var(--border-radius-200);
+        z-index: 1;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
         height: 100%;
 
-        @mixin cardIndent;
+        @include cardIndent;
     }
 
     &__title {
@@ -33,14 +44,14 @@
     }
 
     &__description {
-        margin-top: var(--indent-200);
+        margin: var(--indent-200) 0 0;
     }
 
     &__labels {
         list-style: none;
         display: flex;
         margin: auto 0 0;
-        padding: 0;
+        padding: var(--indent-400) 0 0;
         flex-wrap: wrap;
     }
 

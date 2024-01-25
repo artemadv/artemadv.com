@@ -1,14 +1,15 @@
-import React, { PropsWithChildren, forwardRef } from 'react';
+import React, { ForwardRefRenderFunction, PropsWithChildren, forwardRef } from 'react';
 import clsx from 'clsx';
 
 import { TypographyTag } from '@/shared/ui/types/basic';
+import { isTypographyTagType } from '@/shared/ui/lib/type-guards';
 
 import styles from './Typography.module.css';
 
 type TypographyWeight = 'thin' | 'normal' | 'medium' | 'bold';
 type Typography = {
     className?: string;
-    as?: TypographyTag;
+    as?: string | null;
     size?: TypographyTag;
     weight?: TypographyWeight;
     style?: React.CSSProperties;
@@ -28,27 +29,30 @@ const CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_WEIGHT: { [key in TypographyWeight]?: str
     bold: styles.typography_weight_bold,
 };
 
-export const Typography = forwardRef<HTMLParagraphElement, PropsWithChildren<Typography>>(
-    (props, ref) => {
-        const { children, as = 'p', size, className, weight = 'normal', style } = props;
+const TypographyInner: ForwardRefRenderFunction<
+    HTMLParagraphElement,
+    PropsWithChildren<Typography>
+> = (props, ref) => {
+    const { children, as, size, className, weight = 'normal', style } = props;
 
-        const Tag = as;
-        // Ability to overwrite tag size
-        const typographySize = size ?? as;
+    const Tag = isTypographyTagType(as) ? as : 'p';
+    // Ability to overwrite tag size
+    const typographySize = size ?? Tag;
 
-        return (
-            <Tag
-                ref={ref}
-                style={style}
-                className={clsx(
-                    styles.typography,
-                    className,
-                    CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_SIZE[typographySize],
-                    CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_WEIGHT[weight],
-                )}
-            >
-                {children}
-            </Tag>
-        );
-    },
-);
+    return (
+        <Tag
+            ref={ref}
+            style={style}
+            className={clsx(
+                styles.typography,
+                className,
+                CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_SIZE[typographySize],
+                CLASS_NAME_MAPPER_FOR_TYPOGRAPHY_WEIGHT[weight],
+            )}
+        >
+            {children}
+        </Tag>
+    );
+};
+
+export const Typography = forwardRef(TypographyInner);

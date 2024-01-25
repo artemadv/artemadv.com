@@ -4,7 +4,7 @@ import { SectionExtended } from '../../model/types';
 
 import { TextWithRightContentItem } from './TextWithRightContentItem';
 
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { createStyleFromNodeFields } from '@/shared/lib';
 
 export const TextWithRightContent: FC<SectionExtended> = (props) => {
     const { nodes, secondSlot } = props;

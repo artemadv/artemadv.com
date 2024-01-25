@@ -18,7 +18,7 @@
     &__personalCard {
         margin-top: var(--indent-300);
 
-        @mixin mediaTablet {
+        @include mediaTablet() {
             margin-top: 0;
         }
     }
@@ -30,7 +30,7 @@
         display: flex;
         flex-flow: column;
 
-        @mixin mediaDesktop {
+        @include mediaDesktop() {
             flex-flow: wrap;
         }
     }
@@ -38,7 +38,7 @@
     &__listItem:not(:first-child) {
         margin-top: var(--indent-200);
 
-        @mixin mediaDesktop {
+        @include mediaDesktop() {
             margin-left: var(--indent-200);
             margin-top: 0;
         }

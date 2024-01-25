@@ -183,6 +183,10 @@ export type NodeConfig = NodeInterface & {
   promote: Scalars['Boolean']['output'];
   /** Sections Group */
   sectionsGroup?: Maybe<Array<NodeUnion>>;
+  /** SEO Description */
+  seoDescription?: Maybe<Scalars['String']['output']>;
+  /** SEO Title */
+  seoTitle?: Maybe<Scalars['String']['output']>;
   /** Published */
   status: Scalars['Boolean']['output'];
   /** Sticky at top of lists */
@@ -468,6 +472,7 @@ export type SectionGroupFragment = { __typename?: 'NodeSectionGroup', id: string
 
 export type GetNavigationQueryVariables = Exact<{
   name: MenuAvailable;
+  langcode: Scalars['String']['input'];
 }>;
 
 
@@ -475,13 +480,15 @@ export type GetNavigationQuery = { __typename?: 'Query', menu?: { __typename?: '
 
 export type GetPageConfigQueryVariables = Exact<{
   path: Scalars['String']['input'];
+  langcode: Scalars['String']['input'];
 }>;
 
 
-export type GetPageConfigQuery = { __typename?: 'Query', route?: { __typename?: 'RouteExternal' } | { __typename?: 'RouteInternal', entity?: { __typename?: 'NodeConfig', id: string, sectionsGroup?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup', id: string, sections?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection', id: string, sectionName: string, sectionType?: string | null, styleBackground?: string | null, stylePadding?: string | null, nodes?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode', id: string, actionTitle?: Array<string> | null, actionUrl?: Array<string> | null, styleBackground?: string | null, styleColor?: string | null, stylePadding?: string | null, subtitle?: string | null, titleAs?: string | null, titleText?: string | null, labels?: Array<string> | null, special?: string | null, image?: { __typename?: 'Image', url: string, alt?: string | null } | null, description?: { __typename?: 'TextSummary', value?: string | null } | null } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup' }> | null } | { __typename?: 'NodeSectionGroup' }> | null }> | null } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup' } | null } | null };
+export type GetPageConfigQuery = { __typename?: 'Query', route?: { __typename?: 'RouteExternal' } | { __typename?: 'RouteInternal', entity?: { __typename?: 'NodeConfig', id: string, seoDescription?: string | null, seoTitle?: string | null, sectionsGroup?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup', id: string, sections?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection', id: string, sectionName: string, sectionType?: string | null, styleBackground?: string | null, stylePadding?: string | null, nodes?: Array<{ __typename?: 'NodeConfig' } | { __typename?: 'NodeNode', id: string, actionTitle?: Array<string> | null, actionUrl?: Array<string> | null, styleBackground?: string | null, styleColor?: string | null, stylePadding?: string | null, subtitle?: string | null, titleAs?: string | null, titleText?: string | null, labels?: Array<string> | null, special?: string | null, image?: { __typename?: 'Image', url: string, alt?: string | null } | null, description?: { __typename?: 'TextSummary', value?: string | null } | null } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup' }> | null } | { __typename?: 'NodeSectionGroup' }> | null }> | null } | { __typename?: 'NodeNode' } | { __typename?: 'NodeSection' } | { __typename?: 'NodeSectionGroup' } | null } | null };
 
 export type GetSectionsGroupQueryVariables = Exact<{
   path: Scalars['String']['input'];
+  langcode: Scalars['String']['input'];
 }>;
 
 
@@ -530,8 +537,8 @@ export const SectionGroupFragmentDoc = gql`
 }
     ${SectionFragmentDoc}`;
 export const GetNavigationDocument = gql`
-    query GetNavigation($name: MenuAvailable!) {
-  menu(name: $name) {
+    query GetNavigation($name: MenuAvailable!, $langcode: String!) {
+  menu(name: $name, langcode: $langcode) {
     items {
       id
       title
@@ -554,6 +561,7 @@ export const GetNavigationDocument = gql`
  * const { data, loading, error } = useGetNavigationQuery({
  *   variables: {
  *      name: // value for 'name'
+ *      langcode: // value for 'langcode'
  *   },
  * });
  */
@@ -574,16 +582,16 @@ export type GetNavigationLazyQueryHookResult = ReturnType<typeof useGetNavigatio
 export type GetNavigationSuspenseQueryHookResult = ReturnType<typeof useGetNavigationSuspenseQuery>;
 export type GetNavigationQueryResult = Apollo.QueryResult<GetNavigationQuery, GetNavigationQueryVariables>;
 export const GetPageConfigDocument = gql`
-    query GetPageConfig($path: String!) {
-  route(path: $path) {
+    query GetPageConfig($path: String!, $langcode: String!) {
+  route(path: $path, langcode: $langcode) {
     ... on RouteInternal {
       entity {
         ... on NodeConfig {
           id
+          seoDescription
+          seoTitle
           sectionsGroup {
-            ... on NodeSectionGroup {
-              ...SectionGroup
-            }
+            ...SectionGroup
           }
         }
       }
@@ -605,6 +613,7 @@ export const GetPageConfigDocument = gql`
  * const { data, loading, error } = useGetPageConfigQuery({
  *   variables: {
  *      path: // value for 'path'
+ *      langcode: // value for 'langcode'
  *   },
  * });
  */
@@ -625,11 +634,13 @@ export type GetPageConfigLazyQueryHookResult = ReturnType<typeof useGetPageConfi
 export type GetPageConfigSuspenseQueryHookResult = ReturnType<typeof useGetPageConfigSuspenseQuery>;
 export type GetPageConfigQueryResult = Apollo.QueryResult<GetPageConfigQuery, GetPageConfigQueryVariables>;
 export const GetSectionsGroupDocument = gql`
-    query GetSectionsGroup($path: String!) {
-  route(path: $path) {
+    query GetSectionsGroup($path: String!, $langcode: String!) {
+  route(path: $path, langcode: $langcode) {
     ... on RouteInternal {
       entity {
-        ...SectionGroup
+        ... on NodeSectionGroup {
+          ...SectionGroup
+        }
       }
     }
   }
@@ -649,6 +660,7 @@ export const GetSectionsGroupDocument = gql`
  * const { data, loading, error } = useGetSectionsGroupQuery({
  *   variables: {
  *      path: // value for 'path'
+ *      langcode: // value for 'langcode'
  *   },
  * });
  */

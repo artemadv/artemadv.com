@@ -1,5 +1,5 @@
-query GetNavigation($name: MenuAvailable!) {
-    menu(name: $name) {
+query GetNavigation($name: MenuAvailable!, $langcode: String!) {
+    menu(name: $name, langcode: $langcode) {
         items {
             id
             title

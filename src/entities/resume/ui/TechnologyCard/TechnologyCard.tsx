@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import parse from 'html-react-parser';
 
-import { Typography, checkTypographyTag } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { Typography } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/lib';
 import { Node } from '@/shared/api';
 
 import styles from './TechnologyCard.module.css';
@@ -21,7 +21,7 @@ export const TechnologyCard: FC<TechnologyCard> = (props) => {
             <div className={styles.technologyCard__inner}>
                 {titleText && (
                     <Typography
-                        as={checkTypographyTag(titleAs) ? titleAs : 'h3'}
+                        as={titleAs}
                         size="h2"
                         weight="bold"
                         className={styles.technologyCard__title}

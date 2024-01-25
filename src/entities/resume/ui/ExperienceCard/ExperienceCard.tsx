@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 import parse from 'html-react-parser';
 
-import { AdaptiveImage, Label, Typography, checkTypographyTag } from '@/shared/ui';
-import { createStyleFromNodeFields } from '@/shared/libs';
+import { AdaptiveImage, Label, Typography } from '@/shared/ui';
+import { createStyleFromNodeFields } from '@/shared/lib';
 import { Node } from '@/shared/api';
 
 import styles from './ExperienceCard.module.css';
@@ -33,7 +33,7 @@ export const ExperienceCard: FC<ExperienceCard> = (props) => {
 
                 {titleText && (
                     <Typography
-                        as={checkTypographyTag(titleAs) ? titleAs : 'h3'}
+                        as={titleAs}
                         size="h3"
                         weight="bold"
                         className={styles.experienceCard__title}

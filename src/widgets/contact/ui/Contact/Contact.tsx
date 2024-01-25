@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 import { ContactList } from '../ContactList';
 
 import { TextWithRightContent, SectionType } from '@/entities/section';
-import { useSectionGroups } from '@/shared/api/server-only';
+import { getSectionGroups } from '@/shared/api';
 
 export const Contact: FC = async () => {
-    const { sections } = await useSectionGroups({
+    const { sections } = await getSectionGroups({
         variables: {
             path: 'widget-contact',
         },

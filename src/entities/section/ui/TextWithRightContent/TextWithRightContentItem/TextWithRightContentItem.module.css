@@ -45,14 +45,14 @@
     &__buttonWrapper {
         width: 100%;
 
-        @mixin mediaMobile {
+        @include mediaMobile() {
             width: auto;
         }
 
         &:not(:first-child) {
             margin-top: var(--indent-300);
 
-            @mixin mediaMobile {
+            @include mediaMobile() {
                 margin-left: var(--indent-300);
                 margin-top: 0;
             }
@@ -67,7 +67,7 @@
     &__image {
         margin-top: var(--indent-300);
 
-        @mixin mediaDesktop {
+        @include mediaDesktop() {
             margin-top: 0;
         }
     }

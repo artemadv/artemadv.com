@@ -1,8 +1,8 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
-import { API_URL } from './site.config';
+import { API_URL } from './src/shared/config/site.config';
 
-const PATH = 'src/shared/api/graphql';
+const PATH = './src/shared/api/graphql';
 const config: CodegenConfig = {
     schema: `${API_URL}/graphql`,
     generates: {

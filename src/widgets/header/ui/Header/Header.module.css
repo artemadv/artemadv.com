@@ -7,20 +7,24 @@
     position: relative;
     z-index: 1;
 
-    @mixin darkBoxShadow;
+    @include darkBoxShadow;
 
     &__navigation {
         margin-top: var(--indent-300);
         overflow-x: auto;
 
-        @mixin mediaMobile {
+        @include mediaMobile() {
             margin-top: 0;
         }
     }
 
     &__navigationList {
-        @mixin mediaMobile {
+        @include mediaMobile() {
             justify-content: flex-end;
         }
+    }
+
+    &__locale {
+        justify-content: flex-end;
     }
 }

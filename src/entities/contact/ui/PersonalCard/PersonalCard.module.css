@@ -5,9 +5,9 @@
     align-items: center;
     box-sizing: border-box;
 
-    @mixin darkBoxShadow;
-    @mixin cardBorderRadius;
-    @mixin cardIndent;
+    @include darkBoxShadow;
+    @include cardBorderRadius;
+    @include cardIndent;
 
     &__imageWrapper {
         width: var(--width-100);

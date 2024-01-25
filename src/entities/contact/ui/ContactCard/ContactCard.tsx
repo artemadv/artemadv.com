@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 
-import { Typography, checkTypographyTag } from '@/shared/ui';
-import { createActionsFromNodeFields, createStyleFromNodeFields } from '@/shared/libs';
+import { Typography } from '@/shared/ui';
+import { createActionsFromNodeFields, createStyleFromNodeFields } from '@/shared/lib';
 import { Node } from '@/shared/api';
 
 import styles from './ContactCard.module.css';
@@ -45,7 +45,7 @@ export const ContactCard: FC<ContactCard> = (props) => {
         <ContactCardWrapper {...otherProps}>
             {titleText && (
                 <Typography
-                    as={checkTypographyTag(titleAs) ? titleAs : 'h4'}
+                    as={titleAs}
                     size="h3"
                     weight="bold"
                     className={styles.contactCard__title}

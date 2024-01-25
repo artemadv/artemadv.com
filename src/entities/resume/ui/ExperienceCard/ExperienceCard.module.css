@@ -8,11 +8,11 @@
     justify-content: flex-end;
     flex-flow: column;
 
-    @mixin darkBoxShadow;
-    @mixin cardBorderRadius;
-    @mixin cardIndent;
+    @include darkBoxShadow;
+    @include cardBorderRadius;
+    @include cardIndent;
 
-    @mixin mediaMobile {
+    @include mediaMobile() {
         align-items: center;
         flex-flow: wrap;
     }
@@ -25,7 +25,7 @@
         box-sizing: border-box;
         margin-top: var(--indent-300);
 
-        @mixin mediaMobile {
+        @include mediaMobile() {
             margin-top: 0;
             padding-left: var(--indent-400);
             width: calc(100% - var(--width-100));

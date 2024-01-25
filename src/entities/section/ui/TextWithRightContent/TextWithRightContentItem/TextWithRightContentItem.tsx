@@ -6,16 +6,8 @@ import {
     createStyleFromNodeFields,
     getColorToneByTextColor,
     createActionsFromNodeFields,
-} from '@/shared/libs';
-import {
-    AdaptiveImage,
-    Button,
-    Col,
-    Container,
-    Row,
-    Typography,
-    checkTypographyTag,
-} from '@/shared/ui';
+} from '@/shared/lib';
+import { AdaptiveImage, Button, Col, Container, Row, Typography } from '@/shared/ui';
 import { Node } from '@/shared/api';
 import { SectionExtended } from '@/entities/section/model/types';
 
@@ -47,7 +39,7 @@ export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSl
         <section className={styles.section} style={style}>
             <Container>
                 <Row align="center">
-                    <Col size={needRightContent ? { desktop: 7 } : undefined}>
+                    <Col size={needRightContent ? { mediaDesktop: 7 } : undefined}>
                         {subtitle && (
                             <Typography
                                 as="span"
@@ -62,7 +54,7 @@ export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSl
                         )}
                         {titleText && (
                             <Typography
-                                as={checkTypographyTag(titleAs) ? titleAs : 'h1'}
+                                as={titleAs}
                                 weight="medium"
                                 className={styles.section__title}
                             >
@@ -82,7 +74,7 @@ export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSl
                                             href={href}
                                             theme={index !== 0 ? 'outlined' : undefined}
                                             size="l"
-                                            color={colorTone}
+                                            color={colorTone === 'light' ? 'light' : 'blue'}
                                             className={styles.section__button}
                                         >
                                             {parse(text)}
@@ -93,7 +85,7 @@ export const TextWithRightContentItem: FC<Node & Pick<SectionExtended, 'secondSl
                         )}
                     </Col>
                     {needRightContent && (
-                        <Col size={{ desktop: 5 }}>
+                        <Col size={{ mediaDesktop: 5 }}>
                             <RightContent />
                         </Col>
                     )}

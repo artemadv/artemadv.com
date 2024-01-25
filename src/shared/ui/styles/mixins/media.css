@@ -1,23 +1,23 @@
-@define-mixin mediaMobile {
+@mixin mediaMobile() {
     @media (min-width: 576px) {
-        @mixin-content;
+        @content;
     }
 }
 
-@define-mixin mediaTablet {
+@mixin mediaTablet() {
     @media (min-width: 768px) {
-        @mixin-content;
+        @content;
     }
 }
 
-@define-mixin mediaDesktop {
+@mixin mediaDesktop() {
     @media (min-width: 992px) {
-        @mixin-content;
+        @content;
     }
 }
 
-@define-mixin mediaDesktopLarge {
+@mixin mediaDesktopLarge() {
     @media (min-width: 1200px) {
-        @mixin-content;
+        @content;
     }
 }

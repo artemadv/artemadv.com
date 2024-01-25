@@ -1,4 +1,17 @@
+/* stylelint-disable value-keyword-case */
 @import url('../../../styles/mixins/media.css');
+
+@mixin mediaStyles($class) {
+    @for $i from 1 to 12 {
+        &_size_$(class)-$(i) {
+            width: calc((100% * $(i)) / 12);
+        }
+
+        &_order_$(class)-$(i) {
+            order: $(i);
+        }
+    }
+}
 
 .col {
     padding-left: var(--indent-100);
@@ -6,46 +19,25 @@
     flex: 0 0 auto;
     box-sizing: border-box;
 
-    /*
-    * TODO: Need refactoring.
-    * Temporary solution. Style order is important.
-    */
-
-    @for $i from 1 to 12 {
-        &_size_default$(i) {
-            width: calc((100% * $(i)) / 12);
-        }
+    &_order_default-initial {
+        order: initial;
     }
 
-    @for $i from 1 to 12 {
-        &_size_mobile$(i) {
-            @mixin mediaMobile {
-                width: calc((100% * $(i)) / 12);
-            }
-        }
+    @include mediaStyles(default);
+
+    @include mediaMobile() {
+        @include mediaStyles(mediaMobile);
     }
 
-    @for $i from 1 to 12 {
-        &_size_tablet$(i) {
-            @mixin mediaTablet {
-                width: calc((100% * $(i)) / 12);
-            }
-        }
+    @include mediaTablet() {
+        @include mediaStyles(mediaTablet);
     }
 
-    @for $i from 1 to 12 {
-        &_size_desktop$(i) {
-            @mixin mediaDesktop {
-                width: calc((100% * $(i)) / 12);
-            }
-        }
+    @include mediaDesktop() {
+        @include mediaStyles(mediaDesktop);
     }
 
-    @for $i from 1 to 12 {
-        &_size_desktopLarge$(i) {
-            @mixin mediaDesktopLarge {
-                width: calc((100% * $(i)) / 12);
-            }
-        }
+    @include mediaDesktopLarge() {
+        @include mediaStyles(mediaDesktopLarge);
     }
 }

@@ -7,18 +7,13 @@ import { GetNavigationQuery } from '@/shared/api';
 import styles from './Navigation.module.css';
 
 type Navigation = {
-    isLoading: boolean;
     menu: GetNavigationQuery['menu'];
     className?: string;
     classNameList?: string;
 };
 
 export const Navigation: FC<Navigation> = (props) => {
-    const { menu, className, classNameList, isLoading } = props;
-
-    if (isLoading) {
-        return <>...</>;
-    }
+    const { menu, className, classNameList } = props;
 
     if (!menu?.items) {
         return null;

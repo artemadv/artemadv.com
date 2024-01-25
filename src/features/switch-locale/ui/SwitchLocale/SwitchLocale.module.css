@@ -1,0 +1,16 @@
+@import url('../../../../shared/styles/mixins/styles.css');
+
+.locale {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    &__buttonWrapper:not(:first-child) {
+        margin-left: var(--indent-50);
+    }
+
+    &__button {
+        @include darkBoxShadow(35%, 2px);
+    }
+}

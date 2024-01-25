@@ -7,6 +7,11 @@
     display: inline-block;
     box-sizing: border-box;
 
+    &_size_xs {
+        padding: var(--indent-100) var(--indent-200);
+        font-size: var(--font-size-400);
+    }
+
     &_size_s {
         padding: var(--indent-200) var(--indent-300);
         font-size: var(--font-size-500);
@@ -22,6 +27,10 @@
         font-size: var(--font-size-700);
     }
 
+    &_is_disabled {
+        cursor: default;
+    }
+
     /*
     * TODO: make mixins
     */
@@ -32,7 +41,7 @@
         color: var(--color-white-50);
     }
 
-    &_theme_defaultDark:hover {
+    &_theme_defaultDark:not(&_is_disabled):hover {
         background-color: var(--color-white-50);
         border-color: var(--color-white-50);
         color: var(--color-dark-900);
@@ -44,7 +53,7 @@
         color: var(--color-dark-900);
     }
 
-    &_theme_defaultLight:hover {
+    &_theme_defaultLight:not(&_is_disabled):hover {
         background-color: var(--color-yellow-100);
         border-color: var(--color-yellow-100);
     }
@@ -55,7 +64,7 @@
         color: var(--color-dark-900);
     }
 
-    &_theme_outlinedDark:hover {
+    &_theme_outlinedDark:not(&_is_disabled):hover {
         background-color: var(--color-dark-900);
         color: var(--color-white-50);
     }
@@ -66,7 +75,7 @@
         color: var(--color-white-50);
     }
 
-    &_theme_outlinedLight:hover {
+    &_theme_outlinedLight:not(&_is_disabled):hover {
         background-color: var(--color-white-50);
         color: var(--color-dark-900);
     }
@@ -77,7 +86,7 @@
         color: var(--color-white-50);
     }
 
-    &_theme_defaultBlue:hover {
+    &_theme_defaultBlue:not(&_is_disabled):hover {
         background-color: var(--color-blue-700);
         border-color: var(--color-blue-700);
     }

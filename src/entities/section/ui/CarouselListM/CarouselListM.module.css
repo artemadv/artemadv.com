@@ -6,7 +6,7 @@
     }
 
     &__slide {
-        max-width: 350px;
+        max-width: var(--width-300);
         height: auto;
         margin-right: var(--indent-300);
     }

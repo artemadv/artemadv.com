@@ -6,9 +6,9 @@
     display: block;
     transition: opacity 0.3s;
 
-    @mixin darkBoxShadow;
-    @mixin cardBorderRadius;
-    @mixin cardIndent;
+    @include darkBoxShadow;
+    @include cardBorderRadius;
+    @include cardIndent;
 
     &:link:hover {
         opacity: 0.85;

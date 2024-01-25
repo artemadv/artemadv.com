@@ -1,15 +1,15 @@
 #import "../fragment/SectionGroup.graphql";
 
-query GetPageConfig($path: String!) {
-    route(path: $path) {
+query GetPageConfig($path: String!, $langcode: String!) {
+    route(path: $path, langcode: $langcode) {
         ... on RouteInternal {
             entity {
                 ... on NodeConfig {
                     id
+                    seoDescription
+                    seoTitle
                     sectionsGroup {
-                        ... on NodeSectionGroup {
-                            ...SectionGroup
-                        }
+                        ...SectionGroup
                     }
                 }
             }
