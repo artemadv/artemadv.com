@@ -1,1 +1,1 @@
-export { About as default } from '@/_pages/about';
+export { About as default, generateMetadata } from '@/_pages/about';

@@ -3,7 +3,7 @@ query GetNavigation($name: MenuAvailable!, $langcode: String!) {
         items {
             id
             title
-            url
+            description
         }
     }
 }

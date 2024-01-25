@@ -22,7 +22,7 @@ export const Navigation: FC<Navigation> = (props) => {
     return (
         <nav className={clsx(styles.navigation, className)}>
             <ul className={clsx(styles.navigation__list, classNameList)}>
-                {menu.items.map(({ id, url, title }, index) => (
+                {menu.items.map(({ id, description: url, title }, index) => (
                     <li
                         key={id}
                         className={clsx(styles.navigation__item, {

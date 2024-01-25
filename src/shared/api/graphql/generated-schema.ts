@@ -476,7 +476,7 @@ export type GetNavigationQueryVariables = Exact<{
 }>;
 
 
-export type GetNavigationQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', items: Array<{ __typename?: 'MenuItem', id: string, title: string, url?: string | null }> } | null };
+export type GetNavigationQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', items: Array<{ __typename?: 'MenuItem', id: string, title: string, description?: string | null }> } | null };
 
 export type GetPageConfigQueryVariables = Exact<{
   path: Scalars['String']['input'];
@@ -542,7 +542,7 @@ export const GetNavigationDocument = gql`
     items {
       id
       title
-      url
+      description
     }
   }
 }

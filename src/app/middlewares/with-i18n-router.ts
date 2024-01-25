@@ -7,7 +7,7 @@ import { LOCALES } from '@/shared/config/site.config';
 
 const I18nMiddleware = createI18nMiddleware({
     locales: LOCALES,
-    defaultLocale: LOCALES[0] ?? 'en',
+    defaultLocale: LOCALES[0],
     urlMappingStrategy: 'rewrite',
 });
 
@@ -19,6 +19,6 @@ export const withI18nRouter: MiddlewareFactory = (next) => {
             return I18nMiddleware(request);
         }
 
-        return next(request, _next);
+        return res;
     };
 };
