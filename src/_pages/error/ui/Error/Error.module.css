@@ -1,0 +1,16 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__button {
+        margin-top: var(--indent-300);
+    }
+}

@@ -1,4 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Open_Sans as OpenSans } from 'next/font/google';
 import clsx from 'clsx';
 
@@ -17,9 +19,13 @@ export const RootLayout: FC<PropsWithChildren<Layout>> = ({ children, params: { 
         <html lang={locale} className={styles.fullHeight}>
             <body className={clsx(inter.className, styles.rootLayout, styles.fullHeight)}>
                 <Header />
-                <main>{children}</main>
-                <Contact />
+                <main>
+                    {children}
+                    <Contact />
+                </main>
                 <Footer className={styles.rootLayout__footer} />
+                <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );

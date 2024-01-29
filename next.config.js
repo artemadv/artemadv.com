@@ -12,6 +12,11 @@ module.exports = {
     images: {
         remotePatterns: createDomains([API_URL]),
     },
+    logging: {
+        fetches: {
+            fullUrl: true,
+        },
+    },
     async rewrites() {
         return [
             {
