@@ -1,3 +1,3 @@
 export type Layout = {
-    params: { locale: string };
+    params?: { locale: string };
 };
