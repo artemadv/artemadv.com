@@ -10,6 +10,7 @@ import {
     SectionExtended,
     CarouselListM,
     ColumnList,
+    Faq,
 } from '@/entities/section';
 import { PortfolioCard } from '@/entities/portfolio';
 import { ExperienceCard, TechnologyCard } from '@/entities/resume';
@@ -21,6 +22,7 @@ const SECTION_TEMPLATES_MAPPER: { [key in SectionNames]: FC<Section> } = {
     [SectionNames.CarouselPortfolio]: CarouselListL,
     [SectionNames.CarouselTechnology]: CarouselListM,
     [SectionNames.WorkList]: ColumnList,
+    [SectionNames.Faq]: Faq,
 };
 
 const SECTION_ADDITIONAL_PROPS_MAPPER: {

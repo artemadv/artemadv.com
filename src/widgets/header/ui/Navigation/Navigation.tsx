@@ -22,22 +22,28 @@ export const Navigation: FC<Navigation> = (props) => {
     return (
         <nav className={clsx(styles.navigation, className)}>
             <ul className={clsx(styles.navigation__list, classNameList)}>
-                {menu.items.map(({ id, description: url, title }, index) => (
-                    <li
-                        key={id}
-                        className={clsx(styles.navigation__item, {
-                            [styles.navigation__item_position_first]: index === 0,
-                        })}
-                    >
-                        <ActiveLink
-                            className={styles.navigation__link}
-                            activeClassName={styles.navigation__link_theme_active}
-                            href={url || '/'}
+                {menu.items.map(({ id, description: url, title }, index) => {
+                    const isExternalLink = url?.startsWith('http');
+
+                    return (
+                        <li
+                            key={id}
+                            className={clsx(styles.navigation__item, {
+                                [styles.navigation__item_position_first]: index === 0,
+                            })}
                         >
-                            {title}
-                        </ActiveLink>
-                    </li>
-                ))}
+                            <ActiveLink
+                                className={styles.navigation__link}
+                                activeClassName={styles.navigation__link_theme_active}
+                                href={url || '/'}
+                                target={isExternalLink ? '_blank' : '_self'}
+                                rel={isExternalLink ? 'nofollow' : undefined}
+                            >
+                                {title}
+                            </ActiveLink>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );

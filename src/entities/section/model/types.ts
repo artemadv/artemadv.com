@@ -8,6 +8,7 @@ export enum SectionNames {
     CarouselPortfolio = 'CarouselPortfolio',
     CarouselTechnology = 'CarouselTechnology',
     WorkList = 'WorkList',
+    Faq = 'Faq',
 }
 
 export enum SectionType {

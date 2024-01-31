@@ -18,13 +18,6 @@ export type Button = {
     disabled?: boolean;
 };
 
-const CLASS_NAME_MAPPER_FOR_BUTTON_SIZE: { [key in ButtonSize]?: string } = {
-    xs: styles.button_size_xs,
-    s: styles.button_size_s,
-    m: styles.button_size_m,
-    l: styles.button_size_l,
-};
-
 const createClassNames = ({
     theme,
     color,
@@ -73,7 +66,6 @@ const ButtonInner: ForwardRefRenderFunction<
                 styles.button,
                 disabled && styles.button_is_disabled,
                 className,
-                CLASS_NAME_MAPPER_FOR_BUTTON_SIZE[size],
                 themeClassName,
                 sizeClassName,
             ),

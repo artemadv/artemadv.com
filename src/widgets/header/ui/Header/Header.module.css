@@ -1,11 +1,14 @@
 @import url('../../../../shared/ui/styles/mixins/media.css');
-@import url('../../../../shared/styles/mixins/styles.css');
+@import url('../../../../shared/styles/mixins.css');
+@import url('../../../../shared/styles/z-index.css');
 
 .header {
     padding-top: var(--indent-400);
     padding-bottom: var(--indent-400);
-    position: relative;
-    z-index: 1;
+    background-color: var(--color-yellow-50);
+    position: sticky;
+    z-index: $header;
+    top: 0;
 
     @include darkBoxShadow;
 

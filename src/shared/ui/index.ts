@@ -3,6 +3,7 @@ export { Button } from './ui/basic/Button';
 export { Typography } from './ui/basic/Typography';
 export { Label } from './ui/basic/Label';
 export { Social } from './ui/basic/Social';
+export { Faq } from './ui/basic/Faq';
 // Custom next components
 export { ActiveLink } from './ui/custom-next/ActiveLink';
 export { AdaptiveImage } from './ui/custom-next/AdaptiveImage';

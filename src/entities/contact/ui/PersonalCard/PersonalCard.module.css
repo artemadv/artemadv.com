@@ -1,4 +1,4 @@
-@import url('../../../../shared/styles/mixins/styles.css');
+@import url('../../../../shared/styles/mixins.css');
 
 .personalCard {
     display: flex;

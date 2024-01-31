@@ -1,0 +1,7 @@
+$base: 0;
+$above: 1;
+$below: -1;
+
+$z-index-1: calc($base + $above);
+
+$header: calc($z-index-1 + $above);

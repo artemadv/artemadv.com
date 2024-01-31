@@ -1,4 +1,5 @@
-@import url('../../../../shared/styles/mixins/styles.css');
+@import url('../../../../shared/styles/mixins.css');
+@import url('../../../../shared/styles/z-index.css');
 
 .portfolioCard {
     &__inner {
@@ -28,7 +29,7 @@
         left: 0;
         bottom: 0;
         border-top-right-radius: var(--border-radius-200);
-        z-index: 1;
+        z-index: $z-index-1;
     }
 
     &__content {

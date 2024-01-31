@@ -1,15 +1,14 @@
+'use client';
+
 import React, { FC, useEffect } from 'react';
+
+import { PropsWithError } from '../../model/types';
 
 import { Button, Typography } from '@/shared/ui';
 import { useCurrentLocale } from '@/shared/locales/client';
 import { LOCALES } from '@/shared/config/site.config';
 
-import styles from './Error.module.css';
-
-type ErrorPage = {
-    error: Error & { digest?: string };
-    reset: () => void;
-};
+import styles from './GlobalError.module.css';
 
 const LOCALE_TEXT_MAPPER: {
     [key: (typeof LOCALES)[number]]: {
@@ -26,7 +25,7 @@ const LOCALE_TEXT_MAPPER: {
     },
 };
 
-export const Error: FC<ErrorPage> = (props) => {
+export const GlobalError: FC<PropsWithError> = (props) => {
     const { reset, error } = props;
 
     const local = useCurrentLocale();
